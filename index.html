@@ -159,14 +159,14 @@
         }
     </style>
 </head>
-<body class="p-3 md:p-6 flex flex-col items-center">
+<body class="p-3 md:p-6 flex flex-col items-center pb-24">
 
     <header class="text-center mb-6 w-full max-w-6xl">
         <h1 class="font-cinzel text-3xl md:text-5xl font-extrabold text-hex-gold tracking-widest drop-shadow-md mb-1">
             ADIVINA EL <span class="text-hex-blue">CAMPEÓN</span> DE LOL
         </h1>
         <p class="text-xs md:text-sm text-hex-border tracking-widest font-semibold uppercase">
-            Multijugador P2P en Tiempo Real • Todos los Campeones hasta Locke
+            Multijugador P2P en Tiempo Real • Todos los Campeones
         </p>
     </header>
 
@@ -286,7 +286,7 @@
                         <i class="fa-solid fa-user-ninja text-3xl text-red-500/70"></i>
                     </div>
                     <h3 class="font-cinzel text-xl font-bold text-red-400/90 uppercase tracking-wider">Oculto</h3>
-                    <p class="text-xs text-gray-400 mt-2 max-w-xs">Haz preguntas de SÍ/NO por chat o llamada e ve tachando opciones en el tablero de abajo.</p>
+                    <p class="text-xs text-gray-400 mt-2 max-w-xs">Haz preguntas de SÍ/NO por chat e ve tachando opciones en el tablero de abajo.</p>
                 </div>
             </div>
 
@@ -406,6 +406,40 @@
         </div>
     </section>
 
+    <!-- Roblox-Style In-Game Chat HUD -->
+    <div id="roblox-chat-widget" class="fixed bottom-4 left-4 z-40 w-80 md:w-96 flex flex-col transition-all duration-300">
+        <!-- Chat Header / Title bar -->
+        <div onclick="toggleChatCollapse()" class="bg-black/90 border border-hex-border rounded-t-lg px-3 py-2 flex items-center justify-between cursor-pointer select-none shadow-md hover:bg-hex-panel transition">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-comments text-hex-gold text-sm"></i>
+                <span class="font-cinzel text-xs font-bold text-hex-gold tracking-wide">CHAT DE JUEGO</span>
+                <span id="chat-unread-badge" class="hidden bg-hex-red text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">0</span>
+            </div>
+            <button class="text-xs text-hex-gold hover:text-white" title="Plegar/Desplegar chat">
+                <i id="chat-toggle-icon" class="fa-solid fa-chevron-down"></i>
+            </button>
+        </div>
+
+        <!-- Chat Body -->
+        <div id="chat-body" class="bg-black/80 border-x border-b border-hex-border rounded-b-lg p-2.5 flex flex-col gap-2 backdrop-blur-md shadow-2xl">
+            <!-- Messages Area -->
+            <div id="chat-messages" class="h-44 overflow-y-auto flex flex-col gap-1.5 p-1 text-xs font-sans">
+                <!-- Initial Roblox-style system message -->
+                <div class="text-yellow-400 font-semibold drop-shadow-sm">
+                    <span class="text-yellow-500 font-bold">[Sistema]:</span> ¡Bienvenido al chat! Únete a una sala para hablar con tu amigo.
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="flex items-center gap-1.5 pt-1.5 border-t border-hex-border/40">
+                <input type="text" id="chat-input" onkeydown="handleChatKeyDown(event)" placeholder="Escribe un mensaje..." class="flex-1 bg-black/70 border border-hex-border text-xs px-2.5 py-1.5 rounded text-white placeholder-gray-500 focus:outline-none focus:border-hex-gold font-sans">
+                <button onclick="sendChatMessage()" class="hextech-btn px-3 py-1.5 rounded text-xs flex items-center justify-center">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Custom Modal Container -->
     <div id="custom-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="hextech-box max-w-md w-full p-6 rounded-lg text-center bg-hex-panel">
@@ -419,11 +453,6 @@
     <script>
         // PEERJS NETWORK CONFIGURATION
         const PEER_PREFIX = "lol-guess-v1-"; // Namespace to isolate game codes
-        // Metered TURN configuration
-        // 1) Create a free Metered TURN credential from the dashboard.
-        // 2) Paste the username/password below.
-        // 3) Do NOT commit private/static credentials to a public repository if your
-        //    provider treats them as secrets. Prefer short-lived credentials when available.
         const METERED_TURN_USERNAME = "4b4f2f19feee5106b2e18494";
         const METERED_TURN_PASSWORD = "3ZZvZpIoAsHdqx7s";
 
@@ -431,19 +460,16 @@
             { urls: 'stun:stun.l.google.com:19302' },
             { urls: 'stun:stun1.l.google.com:19302' },
             { urls: 'stun:stun2.l.google.com:19302' },
-            // Metered TURN over UDP
             {
                 urls: 'turn:standard.relay.metered.ca:80',
                 username: METERED_TURN_USERNAME,
                 credential: METERED_TURN_PASSWORD
             },
-            // Metered TURN over TCP (useful on restrictive networks)
             {
                 urls: 'turn:standard.relay.metered.ca:80?transport=tcp',
                 username: METERED_TURN_USERNAME,
                 credential: METERED_TURN_PASSWORD
             },
-            // Metered TURN/TLS over 443
             {
                 urls: 'turns:standard.relay.metered.ca:443?transport=tcp',
                 username: METERED_TURN_USERNAME,
@@ -451,7 +477,7 @@
             }
         ];
 
-        // FULL LEAGUE OF LEGENDS ROSTER WITH DATA KEYS, ROLES & GENDER
+        // FULL LEAGUE OF LEGENDS ROSTER WITH YUNARA & ZAAHEN
         const CHAMPIONS = [
             { name: "Aatrox", key: "Aatrox", roles: ["Luchadores"], gender: "Masculino" },
             { name: "Ahri", key: "Ahri", roles: ["Magos", "Asesinos"], gender: "Femenino" },
@@ -616,7 +642,9 @@
             { name: "Yasuo", key: "Yasuo", roles: ["Luchadores", "Asesinos"], gender: "Masculino" },
             { name: "Yone", key: "Yone", roles: ["Asesinos", "Luchadores"], gender: "Masculino" },
             { name: "Yorick", key: "Yorick", roles: ["Luchadores", "Tanques"], gender: "Masculino" },
+            { name: "Yunara", key: "Yunara", roles: ["Tiradores"], gender: "Femenino" },
             { name: "Yuumi", key: "Yuumi", roles: ["Soportes"], gender: "Femenino" },
+            { name: "Zaahen", key: "Zaahen", roles: ["Luchadores"], gender: "Masculino" },
             { name: "Zac", key: "Zac", roles: ["Tanques"], gender: "Masculino" },
             { name: "Zed", key: "Zed", roles: ["Asesinos"], gender: "Masculino" },
             { name: "Zeri", key: "Zeri", roles: ["Tiradores"], gender: "Femenino" },
@@ -636,6 +664,10 @@
         let eliminatedChamps = new Set();
         let isHoverStrikeActive = false;
         let hideEliminated = false;
+
+        // Chat State
+        let isChatCollapsed = false;
+        let unreadChatMessages = 0;
 
         function getChampImgUrl(key) {
             return `https://ddragon.leagueoflegends.com/cdn/14.1.1/img/champion/${key}.png`;
@@ -666,6 +698,84 @@
             document.getElementById('custom-modal').classList.add('hidden');
         }
 
+        // Roblox-Style Chat Logic
+        function toggleChatCollapse() {
+            isChatCollapsed = !isChatCollapsed;
+            const body = document.getElementById('chat-body');
+            const icon = document.getElementById('chat-toggle-icon');
+            const badge = document.getElementById('chat-unread-badge');
+
+            if (isChatCollapsed) {
+                body.classList.add('hidden');
+                icon.className = "fa-solid fa-chevron-up";
+            } else {
+                body.classList.remove('hidden');
+                icon.className = "fa-solid fa-chevron-down";
+                unreadChatMessages = 0;
+                badge.classList.add('hidden');
+                badge.textContent = '0';
+                
+                const container = document.getElementById('chat-messages');
+                container.scrollTop = container.scrollHeight;
+            }
+        }
+
+        function handleChatKeyDown(event) {
+            if (event.key === 'Enter') {
+                sendChatMessage();
+            }
+        }
+
+        function sendChatMessage() {
+            const input = document.getElementById('chat-input');
+            const text = input.value.trim();
+            if (!text) return;
+
+            if (!conn) {
+                addChatMessage('Sistema', 'Debes estar conectado a una sala con tu amigo para chatear.', 'system');
+                input.value = '';
+                return;
+            }
+
+            addChatMessage('Tú', text, 'self');
+            conn.send({
+                type: 'CHAT_MESSAGE',
+                text: text
+            });
+
+            input.value = '';
+        }
+
+        function addChatMessage(sender, text, type) {
+            const container = document.getElementById('chat-messages');
+            const msgEl = document.createElement('div');
+            msgEl.className = 'text-xs drop-shadow-sm font-sans break-words';
+
+            const safeText = escapeHtml(text);
+
+            if (type === 'system') {
+                msgEl.innerHTML = `<span class="text-yellow-400 font-bold">[Sistema]:</span> <span class="text-yellow-200">${safeText}</span>`;
+            } else if (type === 'self') {
+                msgEl.innerHTML = `<span class="text-hex-blue font-bold">[Tú]:</span> <span class="text-gray-200">${safeText}</span>`;
+            } else {
+                msgEl.innerHTML = `<span class="text-hex-gold font-bold">[Amigo]:</span> <span class="text-gray-200">${safeText}</span>`;
+            }
+
+            container.appendChild(msgEl);
+            container.scrollTop = container.scrollHeight;
+
+            if (isChatCollapsed && type !== 'self') {
+                unreadChatMessages++;
+                const badge = document.getElementById('chat-unread-badge');
+                badge.textContent = unreadChatMessages;
+                badge.classList.remove('hidden');
+            }
+        }
+
+        function escapeHtml(str) {
+            return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+        }
+
         function createRoom() {
             const btn = document.getElementById('btn-create');
             btn.disabled = true;
@@ -682,6 +792,7 @@
                 isHost = true;
                 showRoomActiveUI(cleanRoomCode);
                 updateConnectionStatus("waiting", "Esperando a tu amigo...");
+                addChatMessage('Sistema', `Sala creada. Código: ${cleanRoomCode}. Comparte este código con tu amigo.`, 'system');
             });
 
             peer.on('connection', (incomingConn) => {
@@ -741,7 +852,8 @@
             conn.on('open', () => {
                 showRoomActiveUI(cleanRoomCode);
                 updateConnectionStatus("connected", "¡Amigo Conectado!");
-                
+                addChatMessage('Sistema', '¡Tu amigo se ha conectado a la sala!', 'system');
+
                 const gameSec = document.getElementById('game-section');
                 gameSec.classList.remove('opacity-40', 'pointer-events-none');
 
@@ -761,6 +873,7 @@
 
             conn.on('close', () => {
                 updateConnectionStatus("disconnected", "Amigo desconectado");
+                addChatMessage('Sistema', 'Tu amigo se ha desconectado de la partida.', 'system');
                 showModal("Conexión Perdida", "Tu amigo se ha desconectado de la sala.", "fa-circle-exclamation text-yellow-500");
                 disableGamePanel();
             });
@@ -846,12 +959,16 @@
                 champion: p2Champ
             });
 
+            addChatMessage('Sistema', '¡Se han asignado nuevos campeones secretos!', 'system');
             document.getElementById('btn-roll-text').textContent = "Volver a Tirar";
         }
 
         function handleIncomingData(data) {
             if (data.type === 'ASSIGN_CHAMPION') {
                 setMyChampion(data.champion);
+                addChatMessage('Sistema', '¡Tu amigo ha generado un nuevo campeón secreto para ti!', 'system');
+            } else if (data.type === 'CHAT_MESSAGE') {
+                addChatMessage('Amigo', data.text, 'other');
             }
         }
 
