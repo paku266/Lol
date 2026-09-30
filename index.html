@@ -640,83 +640,187 @@
             document.getElementById('custom-modal').classList.add('hidden');
         }
 
+        function destroyCurrentPeer() {
+            try {
+                if (conn) conn.close();
+            } catch (e) {
+                console.warn("Error cerrando conexión:", e);
+            }
+            try {
+                if (peer) peer.destroy();
+            } catch (e) {
+                console.warn("Error cerrando PeerJS:", e);
+            }
+            conn = null;
+            peer = null;
+        }
+
+        function formatPeerError(err) {
+            const type = err && err.type ? err.type : "unknown";
+            const messages = {
+                "peer-unavailable": "La sala no existe o el host todavía no está conectado al servidor.",
+                "network": "No se puede conectar al servidor de señalización de PeerJS. Comprueba tu conexión a Internet.",
+                "server-error": "El servidor de PeerJS no responde correctamente. Inténtalo de nuevo en unos segundos.",
+                "socket-error": "Se produjo un error de comunicación con el servidor de PeerJS.",
+                "socket-closed": "La conexión con el servidor de PeerJS se cerró inesperadamente.",
+                "webrtc": "Los navegadores no han podido establecer la conexión P2P. Puede ser una limitación de la red o del router.",
+                "browser-incompatible": "Este navegador no permite las funciones WebRTC necesarias para el multijugador.",
+                "unavailable-id": "Ese código de sala ya está siendo utilizado. Generaremos otro.",
+                "invalid-id": "El código de sala generado no es válido.",
+                "ssl-unavailable": "La conexión segura con PeerJS no está disponible. Usa la página mediante HTTPS."
+            };
+            return messages[type] || `Error de PeerJS (${type}). Abre la consola del navegador para ver más detalles.`;
+        }
+
+        function resetCreateButton() {
+            const btn = document.getElementById('btn-create');
+            btn.disabled = false;
+            btn.innerHTML = 'Generar Código';
+        }
+
+        function resetJoinButton() {
+            const btn = document.getElementById('btn-join');
+            btn.disabled = false;
+            btn.innerHTML = 'Entrar';
+        }
+
         function createRoom() {
             const btn = document.getElementById('btn-create');
             btn.disabled = true;
             btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-1"></i> Generando...';
 
+            destroyCurrentPeer();
+            isHost = false;
+
             cleanRoomCode = 'LOL-' + Math.floor(1000 + Math.random() * 9000);
             const internalPeerId = PEER_PREFIX + cleanRoomCode;
 
             peer = new Peer(internalPeerId, {
-                config: { iceServers: STUN_SERVERS }
+                config: { iceServers: STUN_SERVERS },
+                debug: 1
             });
 
-            peer.on('open', () => {
+            peer.on('open', (id) => {
+                console.log('[PeerJS] Sala creada:', id, 'Código:', cleanRoomCode);
                 isHost = true;
                 showRoomActiveUI(cleanRoomCode);
                 updateConnectionStatus("waiting", "Esperando a tu amigo...");
+                btn.disabled = false;
+                btn.innerHTML = 'Generar Código';
             });
 
             peer.on('connection', (incomingConn) => {
+                console.log('[PeerJS] Conexión entrante:', incomingConn.peer);
+                if (conn && conn.open) {
+                    incomingConn.close();
+                    return;
+                }
                 conn = incomingConn;
                 setupConnectionListeners();
             });
 
+            peer.on('disconnected', () => {
+                console.warn('[PeerJS] Desconectado del servidor de señalización.');
+                if (isHost) updateConnectionStatus("disconnected", "Servidor de señalización desconectado");
+            });
+
             peer.on('error', (err) => {
-                console.error("PeerJS Host Error:", err);
-                btn.disabled = false;
-                btn.innerHTML = 'Generar Código';
-                
+                console.error('[PeerJS] Host error:', err);
+
                 if (err.type === 'unavailable-id') {
-                    if (peer) {
-                        try { peer.destroy(); } catch (e) {}
-                        peer = null;
-                    }
+                    destroyCurrentPeer();
                     setTimeout(createRoom, 100);
-                } else {
-                    showModal("Error de Conexión", "No se pudo iniciar el servidor P2P. Inténtalo de nuevo.", "fa-triangle-exclamation text-red-500");
+                    return;
                 }
+
+                resetCreateButton();
+                showModal("Error de Conexión", formatPeerError(err), "fa-triangle-exclamation text-red-500");
             });
         }
 
         function joinRoom() {
             let codeInput = document.getElementById('join-code-input').value.trim().toUpperCase();
             if (!codeInput) {
-                return showModal("Código Requerido", "Por favor introduce el código de sala (ejemplo: LOL-7723).", "fa-circle-exclamation text-hex-gold");
+                return showModal("Código Requerido", "Introduce el código de sala que te ha dado tu amigo (ejemplo: LOL-7723).", "fa-circle-exclamation text-hex-gold");
             }
 
             if (!codeInput.startsWith("LOL-")) {
                 codeInput = "LOL-" + codeInput.replace(/[^0-9]/g, '');
             }
 
-            cleanRoomCode = codeInput;
+            const digits = codeInput.substring(4);
+            if (!/^\d{4}$/.test(digits)) {
+                return showModal("Código Incorrecto", "El código debe tener el formato LOL-7723 (cuatro números).", "fa-circle-exclamation text-hex-gold");
+            }
+
+            cleanRoomCode = "LOL-" + digits;
             const internalPeerId = PEER_PREFIX + cleanRoomCode;
 
             const btn = document.getElementById('btn-join');
             btn.disabled = true;
             btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
 
+            destroyCurrentPeer();
+            isHost = false;
+
             peer = new Peer(null, {
-                config: { iceServers: STUN_SERVERS }
+                config: { iceServers: STUN_SERVERS },
+                debug: 1
             });
 
-            peer.on('open', () => {
-                isHost = false;
+            let connectionOpened = false;
+            let connectionTimeout = null;
+
+            peer.on('open', (id) => {
+                console.log('[PeerJS] Cliente listo:', id, 'Conectando a:', internalPeerId);
                 conn = peer.connect(internalPeerId, { reliable: true });
                 setupConnectionListeners();
+
+                connectionTimeout = setTimeout(() => {
+                    if (!connectionOpened) {
+                        console.warn('[PeerJS] Timeout esperando conexión P2P.');
+                        resetJoinButton();
+                        showModal(
+                            "No se pudo conectar",
+                            "La sala existe o puede existir, pero la conexión entre ambos navegadores no se ha establecido. Comprueba que el host siga en la sala y que ambos estén usando HTTPS.",
+                            "fa-clock text-yellow-400"
+                        );
+                    }
+                }, 15000);
+            });
+
+            peer.on('disconnected', () => {
+                console.warn('[PeerJS] Cliente desconectado del servidor de señalización.');
             });
 
             peer.on('error', (err) => {
-                console.error("PeerJS Client Error:", err);
-                btn.disabled = false;
-                btn.innerHTML = 'Entrar';
-                showModal("Error al Unirse", "No se encontró la sala " + cleanRoomCode + ". Verifica que el código sea correcto.", "fa-circle-xmark text-red-500");
+                console.error('[PeerJS] Client error:', err);
+                if (connectionTimeout) clearTimeout(connectionTimeout);
+                resetJoinButton();
+
+                if (err.type === 'peer-unavailable') {
+                    showModal("Sala no encontrada", `No se encuentra ${cleanRoomCode}. Comprueba el código y asegúrate de que el host mantiene abierta la página.`, "fa-circle-xmark text-red-500");
+                } else {
+                    showModal("Error al Conectar", formatPeerError(err), "fa-triangle-exclamation text-red-500");
+                }
             });
+
+            // El listener común marcará la conexión como abierta cuando llegue el evento 'open'.
+            window.__markConnectionOpened = () => {
+                connectionOpened = true;
+                if (connectionTimeout) clearTimeout(connectionTimeout);
+            };
         }
 
         function setupConnectionListeners() {
+            if (!conn) return;
+
             conn.on('open', () => {
+                console.log('[PeerJS] Conexión P2P abierta con:', conn.peer);
+                if (typeof window.__markConnectionOpened === 'function') {
+                    window.__markConnectionOpened();
+                }
+
                 showRoomActiveUI(cleanRoomCode);
                 updateConnectionStatus("connected", "¡Amigo Conectado!");
                 
@@ -738,13 +842,15 @@
             });
 
             conn.on('close', () => {
+                console.log('[PeerJS] Conexión P2P cerrada.');
                 updateConnectionStatus("disconnected", "Amigo desconectado");
                 showModal("Conexión Perdida", "Tu amigo se ha desconectado de la sala.", "fa-circle-exclamation text-yellow-500");
                 disableGamePanel();
             });
 
             conn.on('error', (err) => {
-                console.error("Connection error:", err);
+                console.error("[PeerJS] Connection error:", err);
+                showModal("Error P2P", "La conexión entre los dos jugadores ha fallado. " + formatPeerError(err), "fa-triangle-exclamation text-red-500");
             });
         }
 
@@ -789,6 +895,7 @@
             isHost = false;
             conn = null;
             peer = null;
+            window.__markConnectionOpened = null;
 
             document.getElementById('connection-controls').classList.remove('hidden');
             document.getElementById('room-active-bar').classList.add('hidden');
