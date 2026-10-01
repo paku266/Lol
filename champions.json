@@ -680,7 +680,7 @@
       "Soportes"
     ],
     "gender": "Femenino",
-    "positions": []
+    "positions": ["Support"]
   },
   {
     "name": "Lillia",
@@ -690,7 +690,7 @@
       "Magos"
     ],
     "gender": "Femenino",
-    "positions": []
+    "positions": ["Jungle"]
   },
   {
     "name": "Lissandra",
@@ -699,17 +699,16 @@
       "Magos"
     ],
     "gender": "Femenino",
-    "positions": []
+    "positions": ["Mid"]
   },
   {
     "name": "Locke",
     "key": "Locke",
     "roles": [
-      "Luchadores",
-      "Tanques"
+      "Asesinos"
     ],
     "gender": "Masculino",
-    "positions": []
+    "positions": ["Mid"]
   },
   {
     "name": "Lucian",
@@ -718,37 +717,34 @@
       "Tiradores"
     ],
     "gender": "Masculino",
-    "positions": []
+    "positions": ["Bot"]
   },
   {
     "name": "Lulu",
     "key": "Lulu",
     "roles": [
-      "Soportes",
-      "Magos"
+      "Soportes"
     ],
     "gender": "Femenino",
-    "positions": []
+    "positions": ["Support"]
   },
   {
     "name": "Lux",
     "key": "Lux",
     "roles": [
-      "Magos",
-      "Soportes"
+      "Magos"
     ],
     "gender": "Femenino",
-    "positions": []
+    "positions": ["Mid", "Support"]
   },
   {
     "name": "Malphite",
     "key": "Malphite",
     "roles": [
-      "Tanques",
-      "Magos"
+      "Tanques"
     ],
     "gender": "Masculino",
-    "positions": []
+    "positions": ["Top"]
   },
   {
     "name": "Malzahar",
@@ -757,17 +753,16 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": []
+    "positions": ["Mid"]
   },
   {
     "name": "Maokai",
     "key": "Maokai",
     "roles": [
-      "Tanques",
-      "Soportes"
+      "Tanques"
     ],
     "gender": "Masculino",
-    "positions": []
+    "positions": ["Jungle", "Support"]
   },
   {
     "name": "Master Yi",
@@ -777,17 +772,16 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": []
+    "positions": ["Jungle"]
   },
   {
     "name": "Mel",
     "key": "Mel",
     "roles": [
-      "Magos",
-      "Soportes"
+      "Magos"
     ],
     "gender": "Femenino",
-    "positions": []
+    "positions": ["Mid"]
   },
   {
     "name": "Milio",
@@ -796,7 +790,7 @@
       "Soportes"
     ],
     "gender": "Masculino",
-    "positions": []
+    "positions": ["Support"]
   },
   {
     "name": "Miss Fortune",
@@ -805,7 +799,7 @@
       "Tiradores"
     ],
     "gender": "Femenino",
-    "positions": []
+    "positions": ["Bot"]
   },
   {
     "name": "Mordekaiser",
@@ -815,7 +809,7 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": []
+    "positions": ["Top"]
   },
   {
     "name": "Morgana",
