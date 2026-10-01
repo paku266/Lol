@@ -811,8 +811,7 @@
     "name": "Mordekaiser",
     "key": "Mordekaiser",
     "roles": [
-      "Luchadores",
-      "Magos"
+      "Luchadores"
     ],
     "gender": "Masculino",
     "positions": []
@@ -841,7 +840,6 @@
     "key": "Nami",
     "roles": [
       "Soportes",
-      "Magos"
     ],
     "gender": "Femenino",
     "positions": []
@@ -871,7 +869,6 @@
     "key": "Neeko",
     "roles": [
       "Magos",
-      "Soportes"
     ],
     "gender": "Femenino",
     "positions": []
@@ -890,7 +887,6 @@
     "name": "Nilah",
     "key": "Nilah",
     "roles": [
-      "Tiradores",
       "Luchadores"
     ],
     "gender": "Femenino",
@@ -947,8 +943,7 @@
     "name": "Pantheon",
     "key": "Pantheon",
     "roles": [
-      "Luchadores",
-      "Asesinos"
+      "Luchadores"
     ],
     "gender": "Masculino",
     "positions": []
@@ -967,7 +962,6 @@
     "name": "Pyke",
     "key": "Pyke",
     "roles": [
-      "Soportes",
       "Asesinos"
     ],
     "gender": "Masculino",
