@@ -12,8 +12,7 @@
     "name": "Ahri",
     "key": "Ahri",
     "roles": [
-      "Magos",
-      "Asesinos"
+      "Magos"
     ],
     "gender": "Femenino",
     "positions": ["Mid"]
@@ -51,8 +50,7 @@
     "name": "Ambessa",
     "key": "Ambessa",
     "roles": [
-      "Luchadores",
-      "Asesinos"
+      "Luchadores"
     ],
     "gender": "Femenino",
     "positions": ["Top"]
@@ -61,8 +59,7 @@
     "name": "Amumu",
     "key": "Amumu",
     "roles": [
-      "Tanques",
-      "Magos"
+      "Tanques"
     ],
     "gender": "Masculino",
     "positions": ["Jungle"]
@@ -98,8 +95,7 @@
     "name": "Ashe",
     "key": "Ashe",
     "roles": [
-      "Tiradores",
-      "Soportes"
+      "Tiradores"
     ],
     "gender": "Femenino",
     "positions": ["Bot"]
@@ -117,8 +113,7 @@
     "name": "Aurora",
     "key": "Aurora",
     "roles": [
-      "Magos",
-      "Asesinos"
+      "Magos"
     ],
     "gender": "Femenino",
     "positions": ["Mid"]
@@ -136,8 +131,7 @@
     "name": "Bard",
     "key": "Bard",
     "roles": [
-      "Soportes",
-      "Magos"
+      "Soportes"
     ],
     "gender": "Masculino",
     "positions": ["Support"]
@@ -165,8 +159,7 @@
     "name": "Brand",
     "key": "Brand",
     "roles": [
-      "Magos",
-      "Soportes"
+      "Magos"
     ],
     "gender": "Masculino",
     "positions": ["Support"]
@@ -185,8 +178,7 @@
     "name": "Briar",
     "key": "Briar",
     "roles": [
-      "Luchadores",
-      "Asesinos"
+      "Luchadores"
     ],
     "gender": "Femenino",
     "positions": ["Jungle"]
@@ -240,8 +232,7 @@
     "name": "Darius",
     "key": "Darius",
     "roles": [
-      "Luchadores",
-      "Tanques"
+      "Luchadores"
     ],
     "gender": "Masculino",
     "positions": ["Top"]
@@ -250,8 +241,7 @@
     "name": "Diana",
     "key": "Diana",
     "roles": [
-      "Luchadores",
-      "Magos"
+      "Luchadores"
     ],
     "gender": "Femenino",
     "positions": ["Jungle", "Mid"]
@@ -278,8 +268,7 @@
     "name": "Ekko",
     "key": "Ekko",
     "roles": [
-      "Asesinos",
-      "Magos"
+      "Asesinos"
     ],
     "gender": "Masculino",
     "positions": ["Mid", "Jungle"]
@@ -288,7 +277,6 @@
     "name": "Elise",
     "key": "Elise",
     "roles": [
-      "Magos",
       "Asesinos"
     ],
     "gender": "Femenino",
@@ -298,8 +286,7 @@
     "name": "Evelynn",
     "key": "Evelynn",
     "roles": [
-      "Asesinos",
-      "Magos"
+      "Asesinos"
     ],
     "gender": "Femenino",
     "positions": ["Jungle"]
@@ -308,8 +295,7 @@
     "name": "Ezreal",
     "key": "Ezreal",
     "roles": [
-      "Tiradores",
-      "Magos"
+      "Tiradores"
     ],
     "gender": "Masculino",
     "positions": ["Bot"]
@@ -336,8 +322,7 @@
     "name": "Fizz",
     "key": "Fizz",
     "roles": [
-      "Asesinos",
-      "Magos"
+      "Asesinos"
     ],
     "gender": "Masculino",
     "positions": ["Mid"]
@@ -364,8 +349,7 @@
     "name": "Garen",
     "key": "Garen",
     "roles": [
-      "Luchadores",
-      "Tanques"
+      "Luchadores"
     ],
     "gender": "Masculino",
     "positions": ["Top"]
@@ -384,7 +368,7 @@
     "name": "Gragas",
     "key": "Gragas",
     "roles": [
-      "Luchadores",
+      "Tanques",
       "Magos"
     ],
     "gender": "Masculino",
@@ -458,8 +442,7 @@
     "name": "Ivern",
     "key": "Ivern",
     "roles": [
-      "Soportes",
-      "Magos"
+      "Soportes"
     ],
     "gender": "Masculino",
     "positions": ["Jungle"]
@@ -524,8 +507,7 @@
     "name": "K'Sante",
     "key": "KSante",
     "roles": [
-      "Tanques",
-      "Luchadores"
+      "Tanques"
     ],
     "gender": "Masculino",
     "positions": ["Top"]
@@ -552,7 +534,6 @@
     "name": "Karma",
     "key": "Karma",
     "roles": [
-      "Magos",
       "Soportes"
     ],
     "gender": "Femenino",
@@ -571,8 +552,7 @@
     "name": "Kassadin",
     "key": "Kassadin",
     "roles": [
-      "Asesinos",
-      "Magos"
+      "Asesinos"
     ],
     "gender": "Masculino",
     "positions": ["Mid"]
@@ -581,8 +561,7 @@
     "name": "Katarina",
     "key": "Katarina",
     "roles": [
-      "Asesinos",
-      "Magos"
+      "Asesinos"
     ],
     "gender": "Femenino",
     "positions": ["Mid"]
