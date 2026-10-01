@@ -812,7 +812,7 @@
     "name": "Nami",
     "key": "Nami",
     "roles": [
-      "Soportes",
+      "Soportes"
     ],
     "gender": "Femenino",
     "positions": ["Support"]
@@ -841,7 +841,7 @@
     "name": "Neeko",
     "key": "Neeko",
     "roles": [
-      "Magos",
+      "Magos"
     ],
     "gender": "Femenino",
     "positions": ["Support"]
@@ -1461,7 +1461,7 @@
     "name": "Xerath",
     "key": "Xerath",
     "roles": [
-      "Magos",
+      "Magos"
     ],
     "gender": "Masculino",
     "positions": ["Mid", "Support"]
