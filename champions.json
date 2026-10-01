@@ -1455,7 +1455,7 @@
       "Tiradores"
     ],
     "gender": "Femenino",
-    "positions": ["Adc"]
+    "positions": ["Bot"]
   },
   {
     "name": "Xerath",
@@ -1538,7 +1538,7 @@
       "Tiradores"
     ],
     "gender": "Femenino",
-    "positions": ["Adc"]
+    "positions": ["Bot"]
   },
   {
     "name": "Ziggs",
@@ -1547,7 +1547,7 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": ["Mid", "Adc"]
+    "positions": ["Mid", "Bot"]
   },
   {
     "name": "Zilean",
