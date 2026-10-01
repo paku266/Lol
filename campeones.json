@@ -1,1 +1,1646 @@
+[
+  {
+    "name": "Aatrox",
+    "key": "Aatrox",
+    "roles": [
+      "Luchadores"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Ahri",
+    "key": "Ahri",
+    "roles": [
+      "Magos",
+      "Asesinos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Akali",
+    "key": "Akali",
+    "roles": [
+      "Asesinos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Akshan",
+    "key": "Akshan",
+    "roles": [
+      "Tiradores",
+      "Asesinos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Alistar",
+    "key": "Alistar",
+    "roles": [
+      "Tanques",
+      "Soportes"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Ambessa",
+    "key": "Ambessa",
+    "roles": [
+      "Luchadores",
+      "Asesinos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Amumu",
+    "key": "Amumu",
+    "roles": [
+      "Tanques",
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Anivia",
+    "key": "Anivia",
+    "roles": [
+      "Magos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Annie",
+    "key": "Annie",
+    "roles": [
+      "Magos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Aphelios",
+    "key": "Aphelios",
+    "roles": [
+      "Tiradores"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Ashe",
+    "key": "Ashe",
+    "roles": [
+      "Tiradores",
+      "Soportes"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Aurelion Sol",
+    "key": "AurelionSol",
+    "roles": [
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Aurora",
+    "key": "Aurora",
+    "roles": [
+      "Magos",
+      "Asesinos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Azir",
+    "key": "Azir",
+    "roles": [
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Bard",
+    "key": "Bard",
+    "roles": [
+      "Soportes",
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Bel'Veth",
+    "key": "Belveth",
+    "roles": [
+      "Luchadores"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Blitzcrank",
+    "key": "Blitzcrank",
+    "roles": [
+      "Tanques",
+      "Soportes"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Brand",
+    "key": "Brand",
+    "roles": [
+      "Magos",
+      "Soportes"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Braum",
+    "key": "Braum",
+    "roles": [
+      "Soportes",
+      "Tanques"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Briar",
+    "key": "Briar",
+    "roles": [
+      "Luchadores",
+      "Asesinos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Caitlyn",
+    "key": "Caitlyn",
+    "roles": [
+      "Tiradores"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Camille",
+    "key": "Camille",
+    "roles": [
+      "Luchadores"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Cassiopeia",
+    "key": "Cassiopeia",
+    "roles": [
+      "Magos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Cho'Gath",
+    "key": "Chogath",
+    "roles": [
+      "Tanques",
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Corki",
+    "key": "Corki",
+    "roles": [
+      "Tiradores",
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Darius",
+    "key": "Darius",
+    "roles": [
+      "Luchadores",
+      "Tanques"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Diana",
+    "key": "Diana",
+    "roles": [
+      "Luchadores",
+      "Magos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Dr. Mundo",
+    "key": "DrMundo",
+    "roles": [
+      "Tanques",
+      "Luchadores"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Draven",
+    "key": "Draven",
+    "roles": [
+      "Tiradores"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Ekko",
+    "key": "Ekko",
+    "roles": [
+      "Asesinos",
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Elise",
+    "key": "Elise",
+    "roles": [
+      "Magos",
+      "Asesinos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Evelynn",
+    "key": "Evelynn",
+    "roles": [
+      "Asesinos",
+      "Magos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Ezreal",
+    "key": "Ezreal",
+    "roles": [
+      "Tiradores",
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Fiddlesticks",
+    "key": "Fiddlesticks",
+    "roles": [
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Fiora",
+    "key": "Fiora",
+    "roles": [
+      "Luchadores"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Fizz",
+    "key": "Fizz",
+    "roles": [
+      "Asesinos",
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Galio",
+    "key": "Galio",
+    "roles": [
+      "Tanques",
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Gangplank",
+    "key": "Gangplank",
+    "roles": [
+      "Luchadores"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Garen",
+    "key": "Garen",
+    "roles": [
+      "Luchadores",
+      "Tanques"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Gnar",
+    "key": "Gnar",
+    "roles": [
+      "Luchadores",
+      "Tanques"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Gragas",
+    "key": "Gragas",
+    "roles": [
+      "Luchadores",
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Graves",
+    "key": "Graves",
+    "roles": [
+      "Tiradores"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Gwen",
+    "key": "Gwen",
+    "roles": [
+      "Luchadores",
+      "Magos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Hecarim",
+    "key": "Hecarim",
+    "roles": [
+      "Luchadores",
+      "Tanques"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Heimerdinger",
+    "key": "Heimerdinger",
+    "roles": [
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Hwei",
+    "key": "Hwei",
+    "roles": [
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Illaoi",
+    "key": "Illaoi",
+    "roles": [
+      "Luchadores"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Irelia",
+    "key": "Irelia",
+    "roles": [
+      "Luchadores",
+      "Asesinos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Ivern",
+    "key": "Ivern",
+    "roles": [
+      "Soportes",
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Janna",
+    "key": "Janna",
+    "roles": [
+      "Soportes",
+      "Magos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Jarvan IV",
+    "key": "JarvanIV",
+    "roles": [
+      "Tanques",
+      "Luchadores"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Jax",
+    "key": "Jax",
+    "roles": [
+      "Luchadores"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Jayce",
+    "key": "Jayce",
+    "roles": [
+      "Luchadores",
+      "Tiradores"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Jhin",
+    "key": "Jhin",
+    "roles": [
+      "Tiradores"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Jinx",
+    "key": "Jinx",
+    "roles": [
+      "Tiradores"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "K'Sante",
+    "key": "KSante",
+    "roles": [
+      "Tanques",
+      "Luchadores"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Kai'Sa",
+    "key": "Kaisa",
+    "roles": [
+      "Tiradores",
+      "Asesinos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Kalista",
+    "key": "Kalista",
+    "roles": [
+      "Tiradores"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Karma",
+    "key": "Karma",
+    "roles": [
+      "Magos",
+      "Soportes"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Karthus",
+    "key": "Karthus",
+    "roles": [
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Kassadin",
+    "key": "Kassadin",
+    "roles": [
+      "Asesinos",
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Katarina",
+    "key": "Katarina",
+    "roles": [
+      "Asesinos",
+      "Magos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Kayle",
+    "key": "Kayle",
+    "roles": [
+      "Luchadores",
+      "Magos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Kayn",
+    "key": "Kayn",
+    "roles": [
+      "Asesinos",
+      "Luchadores"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Kennen",
+    "key": "Kennen",
+    "roles": [
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Kha'Zix",
+    "key": "Khazix",
+    "roles": [
+      "Asesinos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Kindred",
+    "key": "Kindred",
+    "roles": [
+      "Tiradores"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Kled",
+    "key": "Kled",
+    "roles": [
+      "Luchadores"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Kog'Maw",
+    "key": "KogMaw",
+    "roles": [
+      "Tiradores",
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "LeBlanc",
+    "key": "Leblanc",
+    "roles": [
+      "Asesinos",
+      "Magos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Lee Sin",
+    "key": "LeeSin",
+    "roles": [
+      "Luchadores",
+      "Asesinos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Leona",
+    "key": "Leona",
+    "roles": [
+      "Tanques",
+      "Soportes"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Lillia",
+    "key": "Lillia",
+    "roles": [
+      "Luchadores",
+      "Magos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Lissandra",
+    "key": "Lissandra",
+    "roles": [
+      "Magos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Locke",
+    "key": "Locke",
+    "roles": [
+      "Luchadores",
+      "Tanques"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Lucian",
+    "key": "Lucian",
+    "roles": [
+      "Tiradores"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Lulu",
+    "key": "Lulu",
+    "roles": [
+      "Soportes",
+      "Magos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Lux",
+    "key": "Lux",
+    "roles": [
+      "Magos",
+      "Soportes"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Malphite",
+    "key": "Malphite",
+    "roles": [
+      "Tanques",
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Malzahar",
+    "key": "Malzahar",
+    "roles": [
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Maokai",
+    "key": "Maokai",
+    "roles": [
+      "Tanques",
+      "Soportes"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Master Yi",
+    "key": "MasterYi",
+    "roles": [
+      "Asesinos",
+      "Luchadores"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Mel",
+    "key": "Mel",
+    "roles": [
+      "Magos",
+      "Soportes"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Milio",
+    "key": "Milio",
+    "roles": [
+      "Soportes"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Miss Fortune",
+    "key": "MissFortune",
+    "roles": [
+      "Tiradores"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Mordekaiser",
+    "key": "Mordekaiser",
+    "roles": [
+      "Luchadores",
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Morgana",
+    "key": "Morgana",
+    "roles": [
+      "Magos",
+      "Soportes"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Naafiri",
+    "key": "Naafiri",
+    "roles": [
+      "Asesinos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Nami",
+    "key": "Nami",
+    "roles": [
+      "Soportes",
+      "Magos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Nasus",
+    "key": "Nasus",
+    "roles": [
+      "Luchadores",
+      "Tanques"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Nautilus",
+    "key": "Nautilus",
+    "roles": [
+      "Tanques",
+      "Soportes"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Neeko",
+    "key": "Neeko",
+    "roles": [
+      "Magos",
+      "Soportes"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Nidalee",
+    "key": "Nidalee",
+    "roles": [
+      "Asesinos",
+      "Magos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Nilah",
+    "key": "Nilah",
+    "roles": [
+      "Tiradores",
+      "Luchadores"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Nocturne",
+    "key": "Nocturne",
+    "roles": [
+      "Asesinos",
+      "Luchadores"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Nunu & Willump",
+    "key": "Nunu",
+    "roles": [
+      "Tanques",
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Olaf",
+    "key": "Olaf",
+    "roles": [
+      "Luchadores"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Orianna",
+    "key": "Orianna",
+    "roles": [
+      "Magos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Ornn",
+    "key": "Ornn",
+    "roles": [
+      "Tanques"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Pantheon",
+    "key": "Pantheon",
+    "roles": [
+      "Luchadores",
+      "Asesinos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Poppy",
+    "key": "Poppy",
+    "roles": [
+      "Tanques",
+      "Luchadores"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Pyke",
+    "key": "Pyke",
+    "roles": [
+      "Soportes",
+      "Asesinos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Qiyana",
+    "key": "Qiyana",
+    "roles": [
+      "Asesinos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Quinn",
+    "key": "Quinn",
+    "roles": [
+      "Tiradores",
+      "Asesinos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Rakan",
+    "key": "Rakan",
+    "roles": [
+      "Soportes"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Rammus",
+    "key": "Rammus",
+    "roles": [
+      "Tanques"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Rek'Sai",
+    "key": "RekSai",
+    "roles": [
+      "Luchadores"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Rell",
+    "key": "Rell",
+    "roles": [
+      "Tanques",
+      "Soportes"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Renata Glasc",
+    "key": "Renata",
+    "roles": [
+      "Soportes"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Renekton",
+    "key": "Renekton",
+    "roles": [
+      "Luchadores",
+      "Tanques"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Rengar",
+    "key": "Rengar",
+    "roles": [
+      "Asesinos",
+      "Luchadores"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Riven",
+    "key": "Riven",
+    "roles": [
+      "Luchadores",
+      "Asesinos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Rumble",
+    "key": "Rumble",
+    "roles": [
+      "Luchadores",
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Ryze",
+    "key": "Ryze",
+    "roles": [
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Samira",
+    "key": "Samira",
+    "roles": [
+      "Tiradores"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Sejuani",
+    "key": "Sejuani",
+    "roles": [
+      "Tanques"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Senna",
+    "key": "Senna",
+    "roles": [
+      "Tiradores",
+      "Soportes"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Seraphine",
+    "key": "Seraphine",
+    "roles": [
+      "Magos",
+      "Soportes"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Sett",
+    "key": "Sett",
+    "roles": [
+      "Luchadores",
+      "Tanques"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Shaco",
+    "key": "Shaco",
+    "roles": [
+      "Asesinos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Shen",
+    "key": "Shen",
+    "roles": [
+      "Tanques",
+      "Soportes"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Shyvana",
+    "key": "Shyvana",
+    "roles": [
+      "Luchadores",
+      "Magos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Singed",
+    "key": "Singed",
+    "roles": [
+      "Tanques",
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Sion",
+    "key": "Sion",
+    "roles": [
+      "Tanques",
+      "Luchadores"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Sivir",
+    "key": "Sivir",
+    "roles": [
+      "Tiradores"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Skarner",
+    "key": "Skarner",
+    "roles": [
+      "Tanques",
+      "Luchadores"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Smolder",
+    "key": "Smolder",
+    "roles": [
+      "Tiradores",
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Sona",
+    "key": "Sona",
+    "roles": [
+      "Soportes",
+      "Magos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Soraka",
+    "key": "Soraka",
+    "roles": [
+      "Soportes"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Swain",
+    "key": "Swain",
+    "roles": [
+      "Magos",
+      "Soportes"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Sylas",
+    "key": "Sylas",
+    "roles": [
+      "Magos",
+      "Asesinos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Syndra",
+    "key": "Syndra",
+    "roles": [
+      "Magos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Tahm Kench",
+    "key": "TahmKench",
+    "roles": [
+      "Tanques",
+      "Soportes"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Taliyah",
+    "key": "Taliyah",
+    "roles": [
+      "Magos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Talon",
+    "key": "Talon",
+    "roles": [
+      "Asesinos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Taric",
+    "key": "Taric",
+    "roles": [
+      "Soportes",
+      "Tanques"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Teemo",
+    "key": "Teemo",
+    "roles": [
+      "Tiradores",
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Thresh",
+    "key": "Thresh",
+    "roles": [
+      "Soportes",
+      "Tanques"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Tristana",
+    "key": "Tristana",
+    "roles": [
+      "Tiradores"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Trundle",
+    "key": "Trundle",
+    "roles": [
+      "Luchadores",
+      "Tanques"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Tryndamere",
+    "key": "Tryndamere",
+    "roles": [
+      "Luchadores"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Twisted Fate",
+    "key": "TwistedFate",
+    "roles": [
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Twitch",
+    "key": "Twitch",
+    "roles": [
+      "Tiradores",
+      "Asesinos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Udyr",
+    "key": "Udyr",
+    "roles": [
+      "Luchadores",
+      "Tanques"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Urgot",
+    "key": "Urgot",
+    "roles": [
+      "Luchadores",
+      "Tanques"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Varus",
+    "key": "Varus",
+    "roles": [
+      "Tiradores",
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Vayne",
+    "key": "Vayne",
+    "roles": [
+      "Tiradores",
+      "Asesinos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Veigar",
+    "key": "Veigar",
+    "roles": [
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Vel'Koz",
+    "key": "Velkoz",
+    "roles": [
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Vex",
+    "key": "Vex",
+    "roles": [
+      "Magos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Vi",
+    "key": "Vi",
+    "roles": [
+      "Luchadores",
+      "Asesinos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Viego",
+    "key": "Viego",
+    "roles": [
+      "Luchadores",
+      "Asesinos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Viktor",
+    "key": "Viktor",
+    "roles": [
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Vladimir",
+    "key": "Vladimir",
+    "roles": [
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Volibear",
+    "key": "Volibear",
+    "roles": [
+      "Luchadores",
+      "Tanques"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Warwick",
+    "key": "Warwick",
+    "roles": [
+      "Luchadores",
+      "Tanques"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Wukong",
+    "key": "MonkeyKing",
+    "roles": [
+      "Luchadores",
+      "Tanques"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Xayah",
+    "key": "Xayah",
+    "roles": [
+      "Tiradores"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Xerath",
+    "key": "Xerath",
+    "roles": [
+      "Magos",
+      "Soportes"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Xin Zhao",
+    "key": "XinZhao",
+    "roles": [
+      "Luchadores"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Yasuo",
+    "key": "Yasuo",
+    "roles": [
+      "Luchadores",
+      "Asesinos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Yone",
+    "key": "Yone",
+    "roles": [
+      "Asesinos",
+      "Luchadores"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Yorick",
+    "key": "Yorick",
+    "roles": [
+      "Luchadores",
+      "Tanques"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Yuumi",
+    "key": "Yuumi",
+    "roles": [
+      "Soportes"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Zac",
+    "key": "Zac",
+    "roles": [
+      "Tanques"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Zed",
+    "key": "Zed",
+    "roles": [
+      "Asesinos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Zeri",
+    "key": "Zeri",
+    "roles": [
+      "Tiradores"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Ziggs",
+    "key": "Ziggs",
+    "roles": [
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Zilean",
+    "key": "Zilean",
+    "roles": [
+      "Soportes",
+      "Magos"
+    ],
+    "gender": "Masculino",
+    "positions": []
+  },
+  {
+    "name": "Zoe",
+    "key": "Zoe",
+    "roles": [
+      "Magos"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  },
+  {
+    "name": "Zyra",
+    "key": "Zyra",
+    "roles": [
+      "Magos",
+      "Soportes"
+    ],
+    "gender": "Femenino",
+    "positions": []
+  }
+]
 
