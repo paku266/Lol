@@ -157,6 +157,47 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #c8aa6e;
         }
+
+        /* Draggable floating chat */
+        #chat-window {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            width: min(360px, calc(100vw - 24px));
+            z-index: 40;
+            user-select: none;
+        }
+        #chat-window.chat-dragging {
+            opacity: 0.92;
+            cursor: grabbing;
+        }
+        #chat-header {
+            cursor: grab;
+        }
+        #chat-header:active {
+            cursor: grabbing;
+        }
+        #chat-messages {
+            height: 220px;
+            overflow-y: auto;
+            user-select: text;
+        }
+        #chat-window.chat-collapsed {
+            width: min(250px, calc(100vw - 24px));
+        }
+        #chat-collapse-btn {
+            flex-shrink: 0;
+        }
+        @media (max-width: 640px) {
+            #chat-window {
+                right: 12px;
+                bottom: 12px;
+                width: calc(100vw - 24px);
+            }
+            #chat-messages {
+                height: 180px;
+            }
+        }
     </style>
 </head>
 <body class="p-3 md:p-6 flex flex-col items-center">
@@ -419,6 +460,41 @@
         </div>
     </section>
 
+    <!-- Draggable Chat -->
+    <aside id="chat-window" class="hextech-box rounded-lg overflow-hidden shadow-2xl">
+        <div id="chat-header" class="flex items-center justify-between px-3 py-2 bg-black/70 border-b border-hex-border">
+            <div class="flex items-center gap-2 min-w-0">
+                <i class="fa-solid fa-comments text-hex-blue"></i>
+                <span class="font-cinzel text-sm font-bold text-hex-gold truncate">CHAT DE LA SALA</span>
+                <span id="chat-unread-badge" class="hidden min-w-5 h-5 px-1.5 rounded-full bg-hex-red text-white text-[10px] font-bold flex items-center justify-center">0</span>
+            </div>
+            <div class="flex items-center gap-1">
+                <button id="chat-collapse-btn" onclick="toggleChatCollapse()" type="button"
+                    class="bg-black/50 hover:bg-hex-border/40 border border-hex-border/70 hover:border-hex-gold
+                           text-hex-gold w-8 h-8 rounded flex items-center justify-center transition"
+                    title="Plegar chat" aria-label="Plegar chat">
+                    <i id="chat-toggle-icon" class="fa-solid fa-minus text-xs"></i>
+                </button>
+            </div>
+        </div>
+        <div id="chat-body" class="bg-black/60">
+            <div id="chat-messages" class="p-3 space-y-1.5 text-xs">
+                <div class="text-yellow-400 font-semibold drop-shadow-sm">
+                    <span class="text-yellow-500 font-bold">[Sistema]:</span>
+                    ¡Bienvenido al chat! Únete a una sala para hablar con tu amigo.
+                </div>
+            </div>
+            <div class="flex gap-2 p-2 border-t border-hex-border/50 bg-black/40">
+                <input type="text" id="chat-input" onkeydown="handleChatKeyDown(event)"
+                    placeholder="Escribe un mensaje..." maxlength="500"
+                    class="hextech-input min-w-0 flex-1 px-3 py-2 rounded text-xs">
+                <button onclick="sendChatMessage()" type="button" class="hextech-btn px-3 py-2 rounded" title="Enviar mensaje">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                </button>
+            </div>
+        </div>
+    </aside>
+
     <!-- Custom Modal Container -->
     <div id="custom-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="hextech-box max-w-md w-full p-6 rounded-lg text-center bg-hex-panel">
@@ -480,6 +556,12 @@
         let isHoverStrikeActive = false;
         let hideEliminated = false;
 
+        // CHAT STATE
+        let isChatCollapsed = false;
+        let unreadChatMessages = 0;
+        let chatDragState = null;
+        const CHAT_POSITION_KEY = 'lol-guess-chat-position-v1';
+
         function getChampImgUrl(key) {
             return `https://ddragon.leagueoflegends.com/cdn/14.1.1/img/champion/${key}.png`;
         }
@@ -507,6 +589,176 @@
 
         function closeModal() {
             document.getElementById('custom-modal').classList.add('hidden');
+        }
+
+        // =========================
+        // CHAT + DRAGGABLE WINDOW
+        // =========================
+        function toggleChatCollapse() {
+            isChatCollapsed = !isChatCollapsed;
+            const body = document.getElementById('chat-body');
+            const icon = document.getElementById('chat-toggle-icon');
+            const badge = document.getElementById('chat-unread-badge');
+            const windowEl = document.getElementById('chat-window');
+
+            const collapseBtn = document.getElementById('chat-collapse-btn');
+
+            if (isChatCollapsed) {
+                body.classList.add('hidden');
+                icon.className = "fa-solid fa-plus text-xs";
+                collapseBtn.title = "Abrir chat";
+                collapseBtn.setAttribute('aria-label', 'Abrir chat');
+                windowEl.classList.add('chat-collapsed');
+            } else {
+                body.classList.remove('hidden');
+                icon.className = "fa-solid fa-minus text-xs";
+                collapseBtn.title = "Plegar chat";
+                collapseBtn.setAttribute('aria-label', 'Plegar chat');
+                windowEl.classList.remove('chat-collapsed');
+                const container = document.getElementById('chat-messages');
+                container.scrollTop = container.scrollHeight;
+            }
+
+            unreadChatMessages = 0;
+            badge.classList.add('hidden');
+            badge.textContent = '0';
+        }
+
+        function handleChatKeyDown(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                sendChatMessage();
+            }
+        }
+
+        function sendChatMessage() {
+            const input = document.getElementById('chat-input');
+            const text = input.value.trim();
+            if (!text) return;
+
+            if (!conn || !conn.open) {
+                addChatMessage('Sistema', 'Debes estar conectado a una sala con tu amigo para chatear.', 'system');
+                input.value = '';
+                return;
+            }
+
+            addChatMessage('Tú', text, 'self');
+            conn.send({ type: 'CHAT_MESSAGE', text: text });
+            input.value = '';
+            input.focus();
+        }
+
+        function addChatMessage(sender, text, type) {
+            const container = document.getElementById('chat-messages');
+            const msgEl = document.createElement('div');
+            msgEl.className = 'text-xs drop-shadow-sm font-sans break-words';
+            const safeText = escapeHtml(String(text));
+
+            if (type === 'system') {
+                msgEl.innerHTML = `<span class="text-yellow-400 font-bold">[Sistema]:</span> <span class="text-yellow-200">${safeText}</span>`;
+            } else if (type === 'self') {
+                msgEl.innerHTML = `<span class="text-hex-blue font-bold">[Tú]:</span> <span class="text-gray-200">${safeText}</span>`;
+            } else {
+                msgEl.innerHTML = `<span class="text-hex-gold font-bold">[Amigo]:</span> <span class="text-gray-200">${safeText}</span>`;
+            }
+
+            container.appendChild(msgEl);
+            container.scrollTop = container.scrollHeight;
+
+            if (isChatCollapsed && type !== 'self') {
+                unreadChatMessages++;
+                const badge = document.getElementById('chat-unread-badge');
+                badge.textContent = unreadChatMessages;
+                badge.classList.remove('hidden');
+            }
+        }
+
+        function escapeHtml(str) {
+            return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+        }
+
+        function clampChatPosition(left, top) {
+            const chat = document.getElementById('chat-window');
+            const margin = 8;
+            const maxLeft = Math.max(margin, window.innerWidth - chat.offsetWidth - margin);
+            const maxTop = Math.max(margin, window.innerHeight - chat.offsetHeight - margin);
+            return {
+                left: Math.min(Math.max(left, margin), maxLeft),
+                top: Math.min(Math.max(top, margin), maxTop)
+            };
+        }
+
+        function setChatPosition(left, top, save = true) {
+            const chat = document.getElementById('chat-window');
+            const pos = clampChatPosition(left, top);
+            chat.style.left = `${pos.left}px`;
+            chat.style.top = `${pos.top}px`;
+            chat.style.right = 'auto';
+            chat.style.bottom = 'auto';
+            if (save) localStorage.setItem(CHAT_POSITION_KEY, JSON.stringify(pos));
+        }
+
+        function restoreChatPosition() {
+            const chat = document.getElementById('chat-window');
+            const saved = localStorage.getItem(CHAT_POSITION_KEY);
+
+            if (saved) {
+                try {
+                    const pos = JSON.parse(saved);
+                    if (Number.isFinite(pos.left) && Number.isFinite(pos.top)) {
+                        requestAnimationFrame(() => setChatPosition(pos.left, pos.top, false));
+                        return;
+                    }
+                } catch (_) {}
+            }
+
+            requestAnimationFrame(() => {
+                const rect = chat.getBoundingClientRect();
+                setChatPosition(window.innerWidth - rect.width - 24, window.innerHeight - rect.height - 24, false);
+            });
+        }
+
+        function startChatDrag(event) {
+            if (event.target.closest('button') || event.target.closest('input')) return;
+            const chat = document.getElementById('chat-window');
+            const rect = chat.getBoundingClientRect();
+            chatDragState = {
+                offsetX: event.clientX - rect.left,
+                offsetY: event.clientY - rect.top
+            };
+            chat.setPointerCapture?.(event.pointerId);
+            chat.classList.add('chat-dragging');
+            event.preventDefault();
+        }
+
+        function moveChat(event) {
+            if (!chatDragState) return;
+            setChatPosition(event.clientX - chatDragState.offsetX, event.clientY - chatDragState.offsetY, false);
+        }
+
+        function stopChatDrag() {
+            if (!chatDragState) return;
+            chatDragState = null;
+            document.getElementById('chat-window').classList.remove('chat-dragging');
+            const chat = document.getElementById('chat-window');
+            localStorage.setItem(CHAT_POSITION_KEY, JSON.stringify({
+                left: parseFloat(chat.style.left),
+                top: parseFloat(chat.style.top)
+            }));
+        }
+
+        function setupDraggableChat() {
+            const header = document.getElementById('chat-header');
+            header.addEventListener('pointerdown', startChatDrag);
+            window.addEventListener('pointermove', moveChat);
+            window.addEventListener('pointerup', stopChatDrag);
+            window.addEventListener('resize', () => {
+                const chat = document.getElementById('chat-window');
+                const rect = chat.getBoundingClientRect();
+                setChatPosition(rect.left, rect.top, true);
+            });
+            restoreChatPosition();
         }
 
         function createRoom() {
@@ -690,11 +942,15 @@
             });
 
             document.getElementById('btn-roll-text').textContent = "Volver a Tirar";
+            addChatMessage('Sistema', '¡Se han asignado nuevos campeones secretos!', 'system');
         }
 
         function handleIncomingData(data) {
             if (data.type === 'ASSIGN_CHAMPION') {
                 setMyChampion(data.champion);
+                addChatMessage('Sistema', '¡Tu amigo ha generado un nuevo campeón secreto para ti!', 'system');
+            } else if (data.type === 'CHAT_MESSAGE') {
+                addChatMessage('Amigo', data.text, 'other');
             }
         }
 
@@ -960,6 +1216,7 @@
         }
 
         window.addEventListener('DOMContentLoaded', () => {
+            setupDraggableChat();
             loadChampionsData();
         });
     </script>
