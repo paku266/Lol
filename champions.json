@@ -1051,8 +1051,7 @@
     "name": "Renekton",
     "key": "Renekton",
     "roles": [
-      "Luchadores",
-      "Tanques"
+      "Luchadores"
     ],
     "gender": "Masculino",
     "positions": []
@@ -1061,8 +1060,7 @@
     "name": "Rengar",
     "key": "Rengar",
     "roles": [
-      "Asesinos",
-      "Luchadores"
+      "Asesinos"
     ],
     "gender": "Masculino",
     "positions": []
@@ -1071,8 +1069,7 @@
     "name": "Riven",
     "key": "Riven",
     "roles": [
-      "Luchadores",
-      "Asesinos"
+      "Luchadores"
     ],
     "gender": "Femenino",
     "positions": []
@@ -1128,7 +1125,6 @@
     "name": "Seraphine",
     "key": "Seraphine",
     "roles": [
-      "Magos",
       "Soportes"
     ],
     "gender": "Femenino",
@@ -1167,8 +1163,7 @@
     "name": "Shyvana",
     "key": "Shyvana",
     "roles": [
-      "Luchadores",
-      "Magos"
+      "Luchadores"
     ],
     "gender": "Femenino",
     "positions": []
@@ -1187,8 +1182,7 @@
     "name": "Sion",
     "key": "Sion",
     "roles": [
-      "Tanques",
-      "Luchadores"
+      "Tanques"
     ],
     "gender": "Masculino",
     "positions": []
@@ -1206,8 +1200,7 @@
     "name": "Skarner",
     "key": "Skarner",
     "roles": [
-      "Tanques",
-      "Luchadores"
+      "Tanques"
     ],
     "gender": "Masculino",
     "positions": []
@@ -1216,8 +1209,7 @@
     "name": "Smolder",
     "key": "Smolder",
     "roles": [
-      "Tiradores",
-      "Magos"
+      "Tiradores"
     ],
     "gender": "Masculino",
     "positions": []
@@ -1226,8 +1218,7 @@
     "name": "Sona",
     "key": "Sona",
     "roles": [
-      "Soportes",
-      "Magos"
+      "Soportes"
     ],
     "gender": "Femenino",
     "positions": []
@@ -1245,8 +1236,7 @@
     "name": "Swain",
     "key": "Swain",
     "roles": [
-      "Magos",
-      "Soportes"
+      "Magos"
     ],
     "gender": "Masculino",
     "positions": []
@@ -1274,8 +1264,7 @@
     "name": "Tahm Kench",
     "key": "TahmKench",
     "roles": [
-      "Tanques",
-      "Soportes"
+      "Tanques"
     ],
     "gender": "Masculino",
     "positions": []
@@ -1341,8 +1330,7 @@
     "name": "Trundle",
     "key": "Trundle",
     "roles": [
-      "Luchadores",
-      "Tanques"
+      "Luchadores"
     ],
     "gender": "Masculino",
     "positions": []
@@ -1369,8 +1357,7 @@
     "name": "Twitch",
     "key": "Twitch",
     "roles": [
-      "Tiradores",
-      "Asesinos"
+      "Tiradores"
     ],
     "gender": "Masculino",
     "positions": []
@@ -1379,8 +1366,7 @@
     "name": "Udyr",
     "key": "Udyr",
     "roles": [
-      "Luchadores",
-      "Tanques"
+      "Luchadores"
     ],
     "gender": "Masculino",
     "positions": []
@@ -1389,8 +1375,7 @@
     "name": "Urgot",
     "key": "Urgot",
     "roles": [
-      "Luchadores",
-      "Tanques"
+      "Luchadores"
     ],
     "gender": "Masculino",
     "positions": []
@@ -1399,8 +1384,7 @@
     "name": "Varus",
     "key": "Varus",
     "roles": [
-      "Tiradores",
-      "Magos"
+      "Tiradores"
     ],
     "gender": "Masculino",
     "positions": []
@@ -1409,8 +1393,7 @@
     "name": "Vayne",
     "key": "Vayne",
     "roles": [
-      "Tiradores",
-      "Asesinos"
+      "Tiradores"
     ],
     "gender": "Femenino",
     "positions": []
@@ -1446,8 +1429,7 @@
     "name": "Vi",
     "key": "Vi",
     "roles": [
-      "Luchadores",
-      "Asesinos"
+      "Luchadores"
     ],
     "gender": "Femenino",
     "positions": []
@@ -1484,8 +1466,7 @@
     "name": "Volibear",
     "key": "Volibear",
     "roles": [
-      "Luchadores",
-      "Tanques"
+      "Luchadores"
     ],
     "gender": "Masculino",
     "positions": []
@@ -1494,8 +1475,7 @@
     "name": "Warwick",
     "key": "Warwick",
     "roles": [
-      "Luchadores",
-      "Tanques"
+      "Luchadores"
     ],
     "gender": "Masculino",
     "positions": []
@@ -1504,8 +1484,7 @@
     "name": "Wukong",
     "key": "MonkeyKing",
     "roles": [
-      "Luchadores",
-      "Tanques"
+      "Luchadores"
     ],
     "gender": "Masculino",
     "positions": []
@@ -1517,17 +1496,16 @@
       "Tiradores"
     ],
     "gender": "Femenino",
-    "positions": []
+    "positions": ["Adc"]
   },
   {
     "name": "Xerath",
     "key": "Xerath",
     "roles": [
       "Magos",
-      "Soportes"
     ],
     "gender": "Masculino",
-    "positions": []
+    "positions": ["Mid", "Support"]
   },
   {
     "name": "Xin Zhao",
@@ -1536,7 +1514,7 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": []
+    "positions": ["Jungle"]
   },
   {
     "name": "Yasuo",
@@ -1546,7 +1524,7 @@
       "Asesinos"
     ],
     "gender": "Masculino",
-    "positions": []
+    "positions": ["Top", "Mid"]
   },
   {
     "name": "Yone",
@@ -1556,17 +1534,16 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": []
+    "positions": ["Top", "Mid"]
   },
   {
     "name": "Yorick",
     "key": "Yorick",
     "roles": [
-      "Luchadores",
-      "Tanques"
+      "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": []
+    "positions": ["Top"]
   },
   {
     "name": "Yuumi",
@@ -1575,7 +1552,7 @@
       "Soportes"
     ],
     "gender": "Femenino",
-    "positions": []
+    "positions": ["Support"]
   },
   {
     "name": "Zac",
@@ -1584,7 +1561,7 @@
       "Tanques"
     ],
     "gender": "Masculino",
-    "positions": []
+    "positions": ["Jungle"]
   },
   {
     "name": "Zed",
@@ -1593,7 +1570,7 @@
       "Asesinos"
     ],
     "gender": "Masculino",
-    "positions": []
+    "positions": ["Mid"]
   },
   {
     "name": "Zeri",
@@ -1602,7 +1579,7 @@
       "Tiradores"
     ],
     "gender": "Femenino",
-    "positions": []
+    "positions": ["Adc"]
   },
   {
     "name": "Ziggs",
@@ -1611,17 +1588,16 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": []
+    "positions": ["Mid", "Adc"]
   },
   {
     "name": "Zilean",
     "key": "Zilean",
     "roles": [
-      "Soportes",
-      "Magos"
+      "Soportes"
     ],
     "gender": "Masculino",
-    "positions": []
+    "positions": ["Support"]
   },
   {
     "name": "Zoe",
@@ -1630,17 +1606,16 @@
       "Magos"
     ],
     "gender": "Femenino",
-    "positions": []
+    "positions": ["Mid"]
   },
   {
     "name": "Zyra",
     "key": "Zyra",
     "roles": [
-      "Magos",
-      "Soportes"
+      "Magos"
     ],
     "gender": "Femenino",
-    "positions": []
+    "positions": ["Support", "Jungle"]
   }
 ]
 
