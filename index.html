@@ -159,14 +159,14 @@
         }
     </style>
 </head>
-<body class="p-3 md:p-6 flex flex-col items-center pb-24">
+<body class="p-3 md:p-6 flex flex-col items-center">
 
     <header class="text-center mb-6 w-full max-w-6xl">
         <h1 class="font-cinzel text-3xl md:text-5xl font-extrabold text-hex-gold tracking-widest drop-shadow-md mb-1">
             ADIVINA EL <span class="text-hex-blue">CAMPEÓN</span> DE LOL
         </h1>
         <p class="text-xs md:text-sm text-hex-border tracking-widest font-semibold uppercase">
-            Multijugador P2P en Tiempo Real • Todos los Campeones
+            Multijugador P2P en Tiempo Real • Todos los Campeones hasta Locke
         </p>
     </header>
 
@@ -286,7 +286,7 @@
                         <i class="fa-solid fa-user-ninja text-3xl text-red-500/70"></i>
                     </div>
                     <h3 class="font-cinzel text-xl font-bold text-red-400/90 uppercase tracking-wider">Oculto</h3>
-                    <p class="text-xs text-gray-400 mt-2 max-w-xs">Haz preguntas de SÍ/NO por chat e ve tachando opciones en el tablero de abajo.</p>
+                    <p class="text-xs text-gray-400 mt-2 max-w-xs">Haz preguntas de SÍ/NO por chat o llamada e ve tachando opciones en el tablero de abajo.</p>
                 </div>
             </div>
 
@@ -310,7 +310,7 @@
                 <div class="flex flex-wrap items-center gap-2.5">
                     <!-- Search Input -->
                     <div class="relative">
-                        <input type="text" id="search-input" oninput="filterChampions()" placeholder="Buscar por nombre, rol o género..." class="hextech-input text-xs px-3 py-2 pl-8 rounded w-48 sm:w-60 bg-black/60 border border-hex-border text-hex-gold placeholder-gray-500 focus:outline-none focus:border-hex-gold">
+                        <input type="text" id="search-input" oninput="filterChampions()" placeholder="Buscar por nombre, rol, género o posición..." class="hextech-input text-xs px-3 py-2 pl-8 rounded w-48 sm:w-60 bg-black/60 border border-hex-border text-hex-gold placeholder-gray-500 focus:outline-none focus:border-hex-gold">
                         <i class="fa-solid fa-magnifying-glass absolute left-2.5 top-2.5 text-xs text-hex-border"></i>
                     </div>
 
@@ -355,6 +355,19 @@
                         <button onclick="strikeByRole('Soportes')" class="text-xs px-3 py-1.5 rounded border border-hex-border/80 bg-hex-dark hover:bg-hex-border/30 hover:border-hex-gold text-hex-gold font-medium transition flex items-center gap-1.5 shadow-sm">
                             <span>💚</span> Soportes
                         </button>
+                    </div>
+
+                    <!-- Position strike buttons -->
+                    <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-hex-border/30">
+                        <span class="text-xs font-bold text-hex-gold uppercase tracking-wider flex items-center gap-1.5 mr-1 whitespace-nowrap">
+                            <i class="fa-solid fa-map-location-dot text-hex-gold"></i> TACHAR POSICIÓN:
+                        </span>
+
+                        <button onclick="strikeByPosition('Top')" class="text-xs px-3 py-1.5 rounded border border-hex-border/80 bg-hex-dark hover:bg-hex-border/30 hover:border-hex-gold text-hex-gold font-medium transition flex items-center gap-1.5 shadow-sm">Top</button>
+                        <button onclick="strikeByPosition('Jungle')" class="text-xs px-3 py-1.5 rounded border border-hex-border/80 bg-hex-dark hover:bg-hex-border/30 hover:border-hex-gold text-hex-gold font-medium transition flex items-center gap-1.5 shadow-sm">Jungle</button>
+                        <button onclick="strikeByPosition('Mid')" class="text-xs px-3 py-1.5 rounded border border-hex-border/80 bg-hex-dark hover:bg-hex-border/30 hover:border-hex-gold text-hex-gold font-medium transition flex items-center gap-1.5 shadow-sm">Mid</button>
+                        <button onclick="strikeByPosition('Bot')" class="text-xs px-3 py-1.5 rounded border border-hex-border/80 bg-hex-dark hover:bg-hex-border/30 hover:border-hex-gold text-hex-gold font-medium transition flex items-center gap-1.5 shadow-sm">Bot</button>
+                        <button onclick="strikeByPosition('Support')" class="text-xs px-3 py-1.5 rounded border border-hex-border/80 bg-hex-dark hover:bg-hex-border/30 hover:border-hex-gold text-hex-gold font-medium transition flex items-center gap-1.5 shadow-sm">Support</button>
                     </div>
 
                     <!-- Gender strike & visibility action buttons -->
@@ -406,40 +419,6 @@
         </div>
     </section>
 
-    <!-- Roblox-Style In-Game Chat HUD -->
-    <div id="roblox-chat-widget" class="fixed bottom-4 left-4 z-40 w-80 md:w-96 flex flex-col transition-all duration-300">
-        <!-- Chat Header / Title bar -->
-        <div onclick="toggleChatCollapse()" class="bg-black/90 border border-hex-border rounded-t-lg px-3 py-2 flex items-center justify-between cursor-pointer select-none shadow-md hover:bg-hex-panel transition">
-            <div class="flex items-center space-x-2">
-                <i class="fa-solid fa-comments text-hex-gold text-sm"></i>
-                <span class="font-cinzel text-xs font-bold text-hex-gold tracking-wide">CHAT DE JUEGO</span>
-                <span id="chat-unread-badge" class="hidden bg-hex-red text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">0</span>
-            </div>
-            <button class="text-xs text-hex-gold hover:text-white" title="Plegar/Desplegar chat">
-                <i id="chat-toggle-icon" class="fa-solid fa-chevron-down"></i>
-            </button>
-        </div>
-
-        <!-- Chat Body -->
-        <div id="chat-body" class="bg-black/80 border-x border-b border-hex-border rounded-b-lg p-2.5 flex flex-col gap-2 backdrop-blur-md shadow-2xl">
-            <!-- Messages Area -->
-            <div id="chat-messages" class="h-44 overflow-y-auto flex flex-col gap-1.5 p-1 text-xs font-sans">
-                <!-- Initial Roblox-style system message -->
-                <div class="text-yellow-400 font-semibold drop-shadow-sm">
-                    <span class="text-yellow-500 font-bold">[Sistema]:</span> ¡Bienvenido al chat! Únete a una sala para hablar con tu amigo.
-                </div>
-            </div>
-
-            <!-- Input Area -->
-            <div class="flex items-center gap-1.5 pt-1.5 border-t border-hex-border/40">
-                <input type="text" id="chat-input" onkeydown="handleChatKeyDown(event)" placeholder="Escribe un mensaje..." class="flex-1 bg-black/70 border border-hex-border text-xs px-2.5 py-1.5 rounded text-white placeholder-gray-500 focus:outline-none focus:border-hex-gold font-sans">
-                <button onclick="sendChatMessage()" class="hextech-btn px-3 py-1.5 rounded text-xs flex items-center justify-center">
-                    <i class="fa-solid fa-paper-plane text-xs"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-
     <!-- Custom Modal Container -->
     <div id="custom-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="hextech-box max-w-md w-full p-6 rounded-lg text-center bg-hex-panel">
@@ -453,23 +432,31 @@
     <script>
         // PEERJS NETWORK CONFIGURATION
         const PEER_PREFIX = "lol-guess-v1-"; // Namespace to isolate game codes
-        const METERED_TURN_USERNAME = "4b4f2f19feee5106b2e18494";
-        const METERED_TURN_PASSWORD = "3ZZvZpIoAsHdqx7s";
+        // Metered TURN configuration
+        // 1) Create a free Metered TURN credential from the dashboard.
+        // 2) Paste the username/password below.
+        // 3) Do NOT commit private/static credentials to a public repository if your
+        //    provider treats them as secrets. Prefer short-lived credentials when available.
+        const METERED_TURN_USERNAME = "PEGA_AQUI_TU_USERNAME";
+        const METERED_TURN_PASSWORD = "PEGA_AQUI_TU_PASSWORD";
 
         const STUN_SERVERS = [
             { urls: 'stun:stun.l.google.com:19302' },
             { urls: 'stun:stun1.l.google.com:19302' },
             { urls: 'stun:stun2.l.google.com:19302' },
+            // Metered TURN over UDP
             {
                 urls: 'turn:standard.relay.metered.ca:80',
                 username: METERED_TURN_USERNAME,
                 credential: METERED_TURN_PASSWORD
             },
+            // Metered TURN over TCP (useful on restrictive networks)
             {
                 urls: 'turn:standard.relay.metered.ca:80?transport=tcp',
                 username: METERED_TURN_USERNAME,
                 credential: METERED_TURN_PASSWORD
             },
+            // Metered TURN/TLS over 443
             {
                 urls: 'turns:standard.relay.metered.ca:443?transport=tcp',
                 username: METERED_TURN_USERNAME,
@@ -477,182 +464,10 @@
             }
         ];
 
-        // FULL LEAGUE OF LEGENDS ROSTER WITH YUNARA & ZAAHEN
-        const CHAMPIONS = [
-            { name: "Aatrox", key: "Aatrox", roles: ["Luchadores"], gender: "Masculino" },
-            { name: "Ahri", key: "Ahri", roles: ["Magos", "Asesinos"], gender: "Femenino" },
-            { name: "Akali", key: "Akali", roles: ["Asesinos"], gender: "Femenino" },
-            { name: "Akshan", key: "Akshan", roles: ["Tiradores", "Asesinos"], gender: "Masculino" },
-            { name: "Alistar", key: "Alistar", roles: ["Tanques", "Soportes"], gender: "Masculino" },
-            { name: "Ambessa", key: "Ambessa", roles: ["Luchadores", "Asesinos"], gender: "Femenino" },
-            { name: "Amumu", key: "Amumu", roles: ["Tanques", "Magos"], gender: "Masculino" },
-            { name: "Anivia", key: "Anivia", roles: ["Magos"], gender: "Femenino" },
-            { name: "Annie", key: "Annie", roles: ["Magos"], gender: "Femenino" },
-            { name: "Aphelios", key: "Aphelios", roles: ["Tiradores"], gender: "Masculino" },
-            { name: "Ashe", key: "Ashe", roles: ["Tiradores", "Soportes"], gender: "Femenino" },
-            { name: "Aurelion Sol", key: "AurelionSol", roles: ["Magos"], gender: "Masculino" },
-            { name: "Aurora", key: "Aurora", roles: ["Magos", "Asesinos"], gender: "Femenino" },
-            { name: "Azir", key: "Azir", roles: ["Magos"], gender: "Masculino" },
-            { name: "Bard", key: "Bard", roles: ["Soportes", "Magos"], gender: "Masculino" },
-            { name: "Bel'Veth", key: "Belveth", roles: ["Luchadores"], gender: "Femenino" },
-            { name: "Blitzcrank", key: "Blitzcrank", roles: ["Tanques", "Soportes"], gender: "Masculino" },
-            { name: "Brand", key: "Brand", roles: ["Magos", "Soportes"], gender: "Masculino" },
-            { name: "Braum", key: "Braum", roles: ["Soportes", "Tanques"], gender: "Masculino" },
-            { name: "Briar", key: "Briar", roles: ["Luchadores", "Asesinos"], gender: "Femenino" },
-            { name: "Caitlyn", key: "Caitlyn", roles: ["Tiradores"], gender: "Femenino" },
-            { name: "Camille", key: "Camille", roles: ["Luchadores"], gender: "Femenino" },
-            { name: "Cassiopeia", key: "Cassiopeia", roles: ["Magos"], gender: "Femenino" },
-            { name: "Cho'Gath", key: "Chogath", roles: ["Tanques", "Magos"], gender: "Masculino" },
-            { name: "Corki", key: "Corki", roles: ["Tiradores", "Magos"], gender: "Masculino" },
-            { name: "Darius", key: "Darius", roles: ["Luchadores", "Tanques"], gender: "Masculino" },
-            { name: "Diana", key: "Diana", roles: ["Luchadores", "Magos"], gender: "Femenino" },
-            { name: "Dr. Mundo", key: "DrMundo", roles: ["Tanques", "Luchadores"], gender: "Masculino" },
-            { name: "Draven", key: "Draven", roles: ["Tiradores"], gender: "Masculino" },
-            { name: "Ekko", key: "Ekko", roles: ["Asesinos", "Magos"], gender: "Masculino" },
-            { name: "Elise", key: "Elise", roles: ["Magos", "Asesinos"], gender: "Femenino" },
-            { name: "Evelynn", key: "Evelynn", roles: ["Asesinos", "Magos"], gender: "Femenino" },
-            { name: "Ezreal", key: "Ezreal", roles: ["Tiradores", "Magos"], gender: "Masculino" },
-            { name: "Fiddlesticks", key: "Fiddlesticks", roles: ["Magos"], gender: "Masculino" },
-            { name: "Fiora", key: "Fiora", roles: ["Luchadores"], gender: "Femenino" },
-            { name: "Fizz", key: "Fizz", roles: ["Asesinos", "Magos"], gender: "Masculino" },
-            { name: "Galio", key: "Galio", roles: ["Tanques", "Magos"], gender: "Masculino" },
-            { name: "Gangplank", key: "Gangplank", roles: ["Luchadores"], gender: "Masculino" },
-            { name: "Garen", key: "Garen", roles: ["Luchadores", "Tanques"], gender: "Masculino" },
-            { name: "Gnar", key: "Gnar", roles: ["Luchadores", "Tanques"], gender: "Masculino" },
-            { name: "Gragas", key: "Gragas", roles: ["Luchadores", "Magos"], gender: "Masculino" },
-            { name: "Graves", key: "Graves", roles: ["Tiradores"], gender: "Masculino" },
-            { name: "Gwen", key: "Gwen", roles: ["Luchadores", "Magos"], gender: "Femenino" },
-            { name: "Hecarim", key: "Hecarim", roles: ["Luchadores", "Tanques"], gender: "Masculino" },
-            { name: "Heimerdinger", key: "Heimerdinger", roles: ["Magos"], gender: "Masculino" },
-            { name: "Hwei", key: "Hwei", roles: ["Magos"], gender: "Masculino" },
-            { name: "Illaoi", key: "Illaoi", roles: ["Luchadores"], gender: "Femenino" },
-            { name: "Irelia", key: "Irelia", roles: ["Luchadores", "Asesinos"], gender: "Femenino" },
-            { name: "Ivern", key: "Ivern", roles: ["Soportes", "Magos"], gender: "Masculino" },
-            { name: "Janna", key: "Janna", roles: ["Soportes", "Magos"], gender: "Femenino" },
-            { name: "Jarvan IV", key: "JarvanIV", roles: ["Tanques", "Luchadores"], gender: "Masculino" },
-            { name: "Jax", key: "Jax", roles: ["Luchadores"], gender: "Masculino" },
-            { name: "Jayce", key: "Jayce", roles: ["Luchadores", "Tiradores"], gender: "Masculino" },
-            { name: "Jhin", key: "Jhin", roles: ["Tiradores"], gender: "Masculino" },
-            { name: "Jinx", key: "Jinx", roles: ["Tiradores"], gender: "Femenino" },
-            { name: "K'Sante", key: "KSante", roles: ["Tanques", "Luchadores"], gender: "Masculino" },
-            { name: "Kai'Sa", key: "Kaisa", roles: ["Tiradores", "Asesinos"], gender: "Femenino" },
-            { name: "Kalista", key: "Kalista", roles: ["Tiradores"], gender: "Femenino" },
-            { name: "Karma", key: "Karma", roles: ["Magos", "Soportes"], gender: "Femenino" },
-            { name: "Karthus", key: "Karthus", roles: ["Magos"], gender: "Masculino" },
-            { name: "Kassadin", key: "Kassadin", roles: ["Asesinos", "Magos"], gender: "Masculino" },
-            { name: "Katarina", key: "Katarina", roles: ["Asesinos", "Magos"], gender: "Femenino" },
-            { name: "Kayle", key: "Kayle", roles: ["Luchadores", "Magos"], gender: "Femenino" },
-            { name: "Kayn", key: "Kayn", roles: ["Asesinos", "Luchadores"], gender: "Masculino" },
-            { name: "Kennen", key: "Kennen", roles: ["Magos"], gender: "Masculino" },
-            { name: "Kha'Zix", key: "Khazix", roles: ["Asesinos"], gender: "Masculino" },
-            { name: "Kindred", key: "Kindred", roles: ["Tiradores"], gender: "Femenino" },
-            { name: "Kled", key: "Kled", roles: ["Luchadores"], gender: "Masculino" },
-            { name: "Kog'Maw", key: "KogMaw", roles: ["Tiradores", "Magos"], gender: "Masculino" },
-            { name: "LeBlanc", key: "Leblanc", roles: ["Asesinos", "Magos"], gender: "Femenino" },
-            { name: "Lee Sin", key: "LeeSin", roles: ["Luchadores", "Asesinos"], gender: "Masculino" },
-            { name: "Leona", key: "Leona", roles: ["Tanques", "Soportes"], gender: "Femenino" },
-            { name: "Lillia", key: "Lillia", roles: ["Luchadores", "Magos"], gender: "Femenino" },
-            { name: "Lissandra", key: "Lissandra", roles: ["Magos"], gender: "Femenino" },
-            { name: "Locke", key: "Locke", roles: ["Luchadores", "Tanques"], gender: "Masculino" },
-            { name: "Lucian", key: "Lucian", roles: ["Tiradores"], gender: "Masculino" },
-            { name: "Lulu", key: "Lulu", roles: ["Soportes", "Magos"], gender: "Femenino" },
-            { name: "Lux", key: "Lux", roles: ["Magos", "Soportes"], gender: "Femenino" },
-            { name: "Malphite", key: "Malphite", roles: ["Tanques", "Magos"], gender: "Masculino" },
-            { name: "Malzahar", key: "Malzahar", roles: ["Magos"], gender: "Masculino" },
-            { name: "Maokai", key: "Maokai", roles: ["Tanques", "Soportes"], gender: "Masculino" },
-            { name: "Master Yi", key: "MasterYi", roles: ["Asesinos", "Luchadores"], gender: "Masculino" },
-            { name: "Mel", key: "Mel", roles: ["Magos", "Soportes"], gender: "Femenino" },
-            { name: "Milio", key: "Milio", roles: ["Soportes"], gender: "Masculino" },
-            { name: "Miss Fortune", key: "MissFortune", roles: ["Tiradores"], gender: "Femenino" },
-            { name: "Mordekaiser", key: "Mordekaiser", roles: ["Luchadores", "Magos"], gender: "Masculino" },
-            { name: "Morgana", key: "Morgana", roles: ["Magos", "Soportes"], gender: "Femenino" },
-            { name: "Naafiri", key: "Naafiri", roles: ["Asesinos"], gender: "Femenino" },
-            { name: "Nami", key: "Nami", roles: ["Soportes", "Magos"], gender: "Femenino" },
-            { name: "Nasus", key: "Nasus", roles: ["Luchadores", "Tanques"], gender: "Masculino" },
-            { name: "Nautilus", key: "Nautilus", roles: ["Tanques", "Soportes"], gender: "Masculino" },
-            { name: "Neeko", key: "Neeko", roles: ["Magos", "Soportes"], gender: "Femenino" },
-            { name: "Nidalee", key: "Nidalee", roles: ["Asesinos", "Magos"], gender: "Femenino" },
-            { name: "Nilah", key: "Nilah", roles: ["Tiradores", "Luchadores"], gender: "Femenino" },
-            { name: "Nocturne", key: "Nocturne", roles: ["Asesinos", "Luchadores"], gender: "Masculino" },
-            { name: "Nunu & Willump", key: "Nunu", roles: ["Tanques", "Magos"], gender: "Masculino" },
-            { name: "Olaf", key: "Olaf", roles: ["Luchadores"], gender: "Masculino" },
-            { name: "Orianna", key: "Orianna", roles: ["Magos"], gender: "Femenino" },
-            { name: "Ornn", key: "Ornn", roles: ["Tanques"], gender: "Masculino" },
-            { name: "Pantheon", key: "Pantheon", roles: ["Luchadores", "Asesinos"], gender: "Masculino" },
-            { name: "Poppy", key: "Poppy", roles: ["Tanques", "Luchadores"], gender: "Femenino" },
-            { name: "Pyke", key: "Pyke", roles: ["Soportes", "Asesinos"], gender: "Masculino" },
-            { name: "Qiyana", key: "Qiyana", roles: ["Asesinos"], gender: "Femenino" },
-            { name: "Quinn", key: "Quinn", roles: ["Tiradores", "Asesinos"], gender: "Femenino" },
-            { name: "Rakan", key: "Rakan", roles: ["Soportes"], gender: "Masculino" },
-            { name: "Rammus", key: "Rammus", roles: ["Tanques"], gender: "Masculino" },
-            { name: "Rek'Sai", key: "RekSai", roles: ["Luchadores"], gender: "Femenino" },
-            { name: "Rell", key: "Rell", roles: ["Tanques", "Soportes"], gender: "Femenino" },
-            { name: "Renata Glasc", key: "Renata", roles: ["Soportes"], gender: "Femenino" },
-            { name: "Renekton", key: "Renekton", roles: ["Luchadores", "Tanques"], gender: "Masculino" },
-            { name: "Rengar", key: "Rengar", roles: ["Asesinos", "Luchadores"], gender: "Masculino" },
-            { name: "Riven", key: "Riven", roles: ["Luchadores", "Asesinos"], gender: "Femenino" },
-            { name: "Rumble", key: "Rumble", roles: ["Luchadores", "Magos"], gender: "Masculino" },
-            { name: "Ryze", key: "Ryze", roles: ["Magos"], gender: "Masculino" },
-            { name: "Samira", key: "Samira", roles: ["Tiradores"], gender: "Femenino" },
-            { name: "Sejuani", key: "Sejuani", roles: ["Tanques"], gender: "Femenino" },
-            { name: "Senna", key: "Senna", roles: ["Tiradores", "Soportes"], gender: "Femenino" },
-            { name: "Seraphine", key: "Seraphine", roles: ["Magos", "Soportes"], gender: "Femenino" },
-            { name: "Sett", key: "Sett", roles: ["Luchadores", "Tanques"], gender: "Masculino" },
-            { name: "Shaco", key: "Shaco", roles: ["Asesinos"], gender: "Masculino" },
-            { name: "Shen", key: "Shen", roles: ["Tanques", "Soportes"], gender: "Masculino" },
-            { name: "Shyvana", key: "Shyvana", roles: ["Luchadores", "Magos"], gender: "Femenino" },
-            { name: "Singed", key: "Singed", roles: ["Tanques", "Magos"], gender: "Masculino" },
-            { name: "Sion", key: "Sion", roles: ["Tanques", "Luchadores"], gender: "Masculino" },
-            { name: "Sivir", key: "Sivir", roles: ["Tiradores"], gender: "Femenino" },
-            { name: "Skarner", key: "Skarner", roles: ["Tanques", "Luchadores"], gender: "Masculino" },
-            { name: "Smolder", key: "Smolder", roles: ["Tiradores", "Magos"], gender: "Masculino" },
-            { name: "Sona", key: "Sona", roles: ["Soportes", "Magos"], gender: "Femenino" },
-            { name: "Soraka", key: "Soraka", roles: ["Soportes"], gender: "Femenino" },
-            { name: "Swain", key: "Swain", roles: ["Magos", "Soportes"], gender: "Masculino" },
-            { name: "Sylas", key: "Sylas", roles: ["Magos", "Asesinos"], gender: "Masculino" },
-            { name: "Syndra", key: "Syndra", roles: ["Magos"], gender: "Femenino" },
-            { name: "Tahm Kench", key: "TahmKench", roles: ["Tanques", "Soportes"], gender: "Masculino" },
-            { name: "Taliyah", key: "Taliyah", roles: ["Magos"], gender: "Femenino" },
-            { name: "Talon", key: "Talon", roles: ["Asesinos"], gender: "Masculino" },
-            { name: "Taric", key: "Taric", roles: ["Soportes", "Tanques"], gender: "Masculino" },
-            { name: "Teemo", key: "Teemo", roles: ["Tiradores", "Magos"], gender: "Masculino" },
-            { name: "Thresh", key: "Thresh", roles: ["Soportes", "Tanques"], gender: "Masculino" },
-            { name: "Tristana", key: "Tristana", roles: ["Tiradores"], gender: "Femenino" },
-            { name: "Trundle", key: "Trundle", roles: ["Luchadores", "Tanques"], gender: "Masculino" },
-            { name: "Tryndamere", key: "Tryndamere", roles: ["Luchadores"], gender: "Masculino" },
-            { name: "Twisted Fate", key: "TwistedFate", roles: ["Magos"], gender: "Masculino" },
-            { name: "Twitch", key: "Twitch", roles: ["Tiradores", "Asesinos"], gender: "Masculino" },
-            { name: "Udyr", key: "Udyr", roles: ["Luchadores", "Tanques"], gender: "Masculino" },
-            { name: "Urgot", key: "Urgot", roles: ["Luchadores", "Tanques"], gender: "Masculino" },
-            { name: "Varus", key: "Varus", roles: ["Tiradores", "Magos"], gender: "Masculino" },
-            { name: "Vayne", key: "Vayne", roles: ["Tiradores", "Asesinos"], gender: "Femenino" },
-            { name: "Veigar", key: "Veigar", roles: ["Magos"], gender: "Masculino" },
-            { name: "Vel'Koz", key: "Velkoz", roles: ["Magos"], gender: "Masculino" },
-            { name: "Vex", key: "Vex", roles: ["Magos"], gender: "Femenino" },
-            { name: "Vi", key: "Vi", roles: ["Luchadores", "Asesinos"], gender: "Femenino" },
-            { name: "Viego", key: "Viego", roles: ["Luchadores", "Asesinos"], gender: "Masculino" },
-            { name: "Viktor", key: "Viktor", roles: ["Magos"], gender: "Masculino" },
-            { name: "Vladimir", key: "Vladimir", roles: ["Magos"], gender: "Masculino" },
-            { name: "Volibear", key: "Volibear", roles: ["Luchadores", "Tanques"], gender: "Masculino" },
-            { name: "Warwick", key: "Warwick", roles: ["Luchadores", "Tanques"], gender: "Masculino" },
-            { name: "Wukong", key: "MonkeyKing", roles: ["Luchadores", "Tanques"], gender: "Masculino" },
-            { name: "Xayah", key: "Xayah", roles: ["Tiradores"], gender: "Femenino" },
-            { name: "Xerath", key: "Xerath", roles: ["Magos", "Soportes"], gender: "Masculino" },
-            { name: "Xin Zhao", key: "XinZhao", roles: ["Luchadores"], gender: "Masculino" },
-            { name: "Yasuo", key: "Yasuo", roles: ["Luchadores", "Asesinos"], gender: "Masculino" },
-            { name: "Yone", key: "Yone", roles: ["Asesinos", "Luchadores"], gender: "Masculino" },
-            { name: "Yorick", key: "Yorick", roles: ["Luchadores", "Tanques"], gender: "Masculino" },
-            { name: "Yunara", key: "Yunara", roles: ["Tiradores"], gender: "Femenino" },
-            { name: "Yuumi", key: "Yuumi", roles: ["Soportes"], gender: "Femenino" },
-            { name: "Zaahen", key: "Zaahen", roles: ["Luchadores"], gender: "Masculino" },
-            { name: "Zac", key: "Zac", roles: ["Tanques"], gender: "Masculino" },
-            { name: "Zed", key: "Zed", roles: ["Asesinos"], gender: "Masculino" },
-            { name: "Zeri", key: "Zeri", roles: ["Tiradores"], gender: "Femenino" },
-            { name: "Ziggs", key: "Ziggs", roles: ["Magos"], gender: "Masculino" },
-            { name: "Zilean", key: "Zilean", roles: ["Soportes", "Magos"], gender: "Masculino" },
-            { name: "Zoe", key: "Zoe", roles: ["Magos"], gender: "Femenino" },
-            { name: "Zyra", key: "Zyra", roles: ["Magos", "Soportes"], gender: "Femenino" }
-        ];
+        // FULL LEAGUE OF LEGENDS ROSTER WITH DATA KEYS, ROLES & GENDER
+        // Champion data is loaded from ./champions.json so it can be edited separately.
+        let CHAMPIONS = [];
+        let championsLoaded = false;
 
         // GLOBAL APPLICATION STATE
         let peer = null;
@@ -664,10 +479,6 @@
         let eliminatedChamps = new Set();
         let isHoverStrikeActive = false;
         let hideEliminated = false;
-
-        // Chat State
-        let isChatCollapsed = false;
-        let unreadChatMessages = 0;
 
         function getChampImgUrl(key) {
             return `https://ddragon.leagueoflegends.com/cdn/14.1.1/img/champion/${key}.png`;
@@ -698,84 +509,6 @@
             document.getElementById('custom-modal').classList.add('hidden');
         }
 
-        // Roblox-Style Chat Logic
-        function toggleChatCollapse() {
-            isChatCollapsed = !isChatCollapsed;
-            const body = document.getElementById('chat-body');
-            const icon = document.getElementById('chat-toggle-icon');
-            const badge = document.getElementById('chat-unread-badge');
-
-            if (isChatCollapsed) {
-                body.classList.add('hidden');
-                icon.className = "fa-solid fa-chevron-up";
-            } else {
-                body.classList.remove('hidden');
-                icon.className = "fa-solid fa-chevron-down";
-                unreadChatMessages = 0;
-                badge.classList.add('hidden');
-                badge.textContent = '0';
-                
-                const container = document.getElementById('chat-messages');
-                container.scrollTop = container.scrollHeight;
-            }
-        }
-
-        function handleChatKeyDown(event) {
-            if (event.key === 'Enter') {
-                sendChatMessage();
-            }
-        }
-
-        function sendChatMessage() {
-            const input = document.getElementById('chat-input');
-            const text = input.value.trim();
-            if (!text) return;
-
-            if (!conn) {
-                addChatMessage('Sistema', 'Debes estar conectado a una sala con tu amigo para chatear.', 'system');
-                input.value = '';
-                return;
-            }
-
-            addChatMessage('Tú', text, 'self');
-            conn.send({
-                type: 'CHAT_MESSAGE',
-                text: text
-            });
-
-            input.value = '';
-        }
-
-        function addChatMessage(sender, text, type) {
-            const container = document.getElementById('chat-messages');
-            const msgEl = document.createElement('div');
-            msgEl.className = 'text-xs drop-shadow-sm font-sans break-words';
-
-            const safeText = escapeHtml(text);
-
-            if (type === 'system') {
-                msgEl.innerHTML = `<span class="text-yellow-400 font-bold">[Sistema]:</span> <span class="text-yellow-200">${safeText}</span>`;
-            } else if (type === 'self') {
-                msgEl.innerHTML = `<span class="text-hex-blue font-bold">[Tú]:</span> <span class="text-gray-200">${safeText}</span>`;
-            } else {
-                msgEl.innerHTML = `<span class="text-hex-gold font-bold">[Amigo]:</span> <span class="text-gray-200">${safeText}</span>`;
-            }
-
-            container.appendChild(msgEl);
-            container.scrollTop = container.scrollHeight;
-
-            if (isChatCollapsed && type !== 'self') {
-                unreadChatMessages++;
-                const badge = document.getElementById('chat-unread-badge');
-                badge.textContent = unreadChatMessages;
-                badge.classList.remove('hidden');
-            }
-        }
-
-        function escapeHtml(str) {
-            return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
-        }
-
         function createRoom() {
             const btn = document.getElementById('btn-create');
             btn.disabled = true;
@@ -792,7 +525,6 @@
                 isHost = true;
                 showRoomActiveUI(cleanRoomCode);
                 updateConnectionStatus("waiting", "Esperando a tu amigo...");
-                addChatMessage('Sistema', `Sala creada. Código: ${cleanRoomCode}. Comparte este código con tu amigo.`, 'system');
             });
 
             peer.on('connection', (incomingConn) => {
@@ -852,8 +584,7 @@
             conn.on('open', () => {
                 showRoomActiveUI(cleanRoomCode);
                 updateConnectionStatus("connected", "¡Amigo Conectado!");
-                addChatMessage('Sistema', '¡Tu amigo se ha conectado a la sala!', 'system');
-
+                
                 const gameSec = document.getElementById('game-section');
                 gameSec.classList.remove('opacity-40', 'pointer-events-none');
 
@@ -873,7 +604,6 @@
 
             conn.on('close', () => {
                 updateConnectionStatus("disconnected", "Amigo desconectado");
-                addChatMessage('Sistema', 'Tu amigo se ha desconectado de la partida.', 'system');
                 showModal("Conexión Perdida", "Tu amigo se ha desconectado de la sala.", "fa-circle-exclamation text-yellow-500");
                 disableGamePanel();
             });
@@ -946,7 +676,7 @@
         }
 
         function rollChampions() {
-            if (!conn || !isHost) return;
+            if (!conn || !isHost || !championsLoaded || CHAMPIONS.length < 2) return;
 
             const available = [...CHAMPIONS].sort(() => 0.5 - Math.random());
             const p1Champ = available[0];
@@ -959,16 +689,12 @@
                 champion: p2Champ
             });
 
-            addChatMessage('Sistema', '¡Se han asignado nuevos campeones secretos!', 'system');
             document.getElementById('btn-roll-text').textContent = "Volver a Tirar";
         }
 
         function handleIncomingData(data) {
             if (data.type === 'ASSIGN_CHAMPION') {
                 setMyChampion(data.champion);
-                addChatMessage('Sistema', '¡Tu amigo ha generado un nuevo campeón secreto para ti!', 'system');
-            } else if (data.type === 'CHAT_MESSAGE') {
-                addChatMessage('Amigo', data.text, 'other');
             }
         }
 
@@ -1028,6 +754,7 @@
                 card.setAttribute('data-name', champ.name.toLowerCase());
                 card.setAttribute('data-roles', champ.roles.join(',').toLowerCase());
                 card.setAttribute('data-gender', champ.gender.toLowerCase());
+                card.setAttribute('data-positions', (champ.positions || []).join(',').toLowerCase());
                 card.setAttribute('data-champ-name', champ.name);
 
                 const imgUrl = getChampImgUrl(champ.key);
@@ -1111,6 +838,19 @@
             updateCounters();
         }
 
+        function strikeByPosition(positionName) {
+            CHAMPIONS.forEach(champ => {
+                if ((champ.positions || []).includes(positionName)) {
+                    eliminatedChamps.add(champ.name);
+                    const card = document.getElementById(`champ-card-${champ.key}`);
+                    if (card) {
+                        card.classList.add('eliminated');
+                    }
+                }
+            });
+            updateCounters();
+        }
+
         function strikeVisibles() {
             const cards = document.querySelectorAll('.champ-card:not(.hidden)');
             cards.forEach(card => {
@@ -1147,10 +887,11 @@
                 const name = card.getAttribute('data-name');
                 const roles = card.getAttribute('data-roles');
                 const gender = card.getAttribute('data-gender');
+                const positions = card.getAttribute('data-positions');
                 const champName = card.getAttribute('data-champ-name');
                 const isEliminated = eliminatedChamps.has(champName);
 
-                const matchesSearch = name.includes(searchVal) || roles.includes(searchVal) || gender.includes(searchVal);
+                const matchesSearch = name.includes(searchVal) || roles.includes(searchVal) || gender.includes(searchVal) || positions.includes(searchVal);
 
                 if (matchesSearch && (!hideEliminated || !isEliminated)) {
                     card.classList.remove('hidden');
@@ -1187,8 +928,39 @@
             filterChampions();
         }
 
+        async function loadChampionsData() {
+            try {
+                const response = await fetch('./champions.json', { cache: 'no-store' });
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+
+                const data = await response.json();
+                if (!Array.isArray(data) || data.length < 2) {
+                    throw new Error('champions.json no contiene una lista válida de campeones.');
+                }
+
+                CHAMPIONS = data.map(champ => ({
+                    ...champ,
+                    roles: Array.isArray(champ.roles) ? champ.roles : [],
+                    positions: Array.isArray(champ.positions) ? champ.positions : [],
+                    gender: champ.gender || ''
+                }));
+
+                championsLoaded = true;
+                renderChampionsGrid();
+            } catch (error) {
+                console.error('Error cargando champions.json:', error);
+                showModal(
+                    'Error cargando campeones',
+                    'No se pudo cargar champions.json. Comprueba que el archivo esté en la misma carpeta que index.html y que sea un JSON válido.',
+                    'fa-triangle-exclamation text-red-400'
+                );
+            }
+        }
+
         window.addEventListener('DOMContentLoaded', () => {
-            renderChampionsGrid();
+            loadChampionsData();
         });
     </script>
 </body>
