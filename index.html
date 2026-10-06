@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -115,7 +116,7 @@
         }
 
         .champ-card.eliminated {
-            opacity: 0.22;
+            opacity: 0.55;
             filter: grayscale(100%);
             border-color: #2a2a2a !important;
             transform: scale(0.95);
@@ -337,7 +338,7 @@
     <section class="w-full max-w-6xl">
         <div class="hextech-box p-5 md:p-6 rounded-lg">
             
-            <!-- Header Row with Title, Search, Hover Mode, Reset -->
+            <!-- Header Row with Title, Search, Undo/Redo, Hover Mode, Reset -->
             <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-5">
                 <div>
                     <h2 class="font-cinzel text-2xl md:text-3xl text-hex-gold font-bold tracking-wider mb-1 uppercase">
@@ -355,6 +356,16 @@
                         <i class="fa-solid fa-magnifying-glass absolute left-2.5 top-2.5 text-xs text-hex-border"></i>
                     </div>
 
+                    <!-- Undo Button -->
+                    <button id="btn-undo" onclick="undoAction()" disabled class="text-xs border border-hex-border hover:border-hex-gold disabled:opacity-40 disabled:cursor-not-allowed px-3 py-2 rounded bg-hex-dark text-hex-gold font-semibold transition flex items-center gap-1.5 shadow-sm" title="Deshacer el último descarte (Ctrl + Z)">
+                        <i class="fa-solid fa-rotate-left"></i> Deshacer
+                    </button>
+
+                    <!-- Redo Button -->
+                    <button id="btn-redo" onclick="redoAction()" disabled class="text-xs border border-hex-border hover:border-hex-gold disabled:opacity-40 disabled:cursor-not-allowed px-3 py-2 rounded bg-hex-dark text-hex-gold font-semibold transition flex items-center gap-1.5 shadow-sm" title="Rehacer el descarte (Ctrl + Y)">
+                        <i class="fa-solid fa-rotate-right"></i> Rehacer
+                    </button>
+
                     <!-- Mode Toggle Button -->
                     <button id="hover-mode-btn" onclick="toggleHoverStrikeMode()" class="text-xs border border-hex-border hover:border-hex-gold px-3 py-2 rounded bg-hex-dark text-hex-gold font-semibold transition flex items-center gap-1.5 shadow-sm">
                         <i class="fa-solid fa-hand-pointer text-hex-gold"></i>
@@ -363,7 +374,7 @@
 
                     <!-- Reset Grid Button -->
                     <button onclick="resetGrid()" class="text-xs border border-hex-border hover:border-hex-gold px-3 py-2 rounded bg-hex-dark text-hex-gold font-semibold transition flex items-center gap-1.5 shadow-sm">
-                        <i class="fa-solid fa-rotate-right"></i> Reiniciar Tablero
+                        <i class="fa-solid fa-arrow-rotate-right"></i> Reiniciar Tablero
                     </button>
                 </div>
             </div>
@@ -508,11 +519,6 @@
     <script>
         // PEERJS NETWORK CONFIGURATION
         const PEER_PREFIX = "lol-guess-v1-"; // Namespace to isolate game codes
-        // Metered TURN configuration
-        // 1) Create a free Metered TURN credential from the dashboard.
-        // 2) Paste the username/password below.
-        // 3) Do NOT commit private/static credentials to a public repository if your
-        //    provider treats them as secrets. Prefer short-lived credentials when available.
         const METERED_TURN_USERNAME = "4b4f2f19feee5106b2e18494";
         const METERED_TURN_PASSWORD = "3ZZvZpIoAsHdqx7s";
 
@@ -520,19 +526,16 @@
             { urls: 'stun:stun.l.google.com:19302' },
             { urls: 'stun:stun1.l.google.com:19302' },
             { urls: 'stun:stun2.l.google.com:19302' },
-            // Metered TURN over UDP
             {
                 urls: 'turn:standard.relay.metered.ca:80',
                 username: METERED_TURN_USERNAME,
                 credential: METERED_TURN_PASSWORD
             },
-            // Metered TURN over TCP (useful on restrictive networks)
             {
                 urls: 'turn:standard.relay.metered.ca:80?transport=tcp',
                 username: METERED_TURN_USERNAME,
                 credential: METERED_TURN_PASSWORD
             },
-            // Metered TURN/TLS over 443
             {
                 urls: 'turns:standard.relay.metered.ca:443?transport=tcp',
                 username: METERED_TURN_USERNAME,
@@ -540,8 +543,6 @@
             }
         ];
 
-        // FULL LEAGUE OF LEGENDS ROSTER WITH DATA KEYS, ROLES & GENDER
-        // Champion data is loaded from ./champions.json so it can be edited separately.
         let CHAMPIONS = [];
         let championsLoaded = false;
 
@@ -556,6 +557,10 @@
         let isHoverStrikeActive = false;
         let hideEliminated = false;
 
+        // UNDO / REDO HISTORY STACKS
+        let undoStack = [];
+        let redoStack = [];
+
         // CHAT STATE
         let isChatCollapsed = false;
         let unreadChatMessages = 0;
@@ -563,10 +568,42 @@
         const CHAT_POSITION_KEY = 'lol-guess-chat-position-v1';
 
         function getChampImgUrl(key) {
-            return `https://ddragon.leagueoflegends.com/cdn/14.1.1/img/champion/${key}.png`;
+            if (key === 'Locke' || key === 'locke') return 'locke.png';
+            if (key === 'Zaahen' || key === 'zaahen') return 'zaahen.png';
+            return `https://cdn.communitydragon.org/latest/champion/${key}/square`;
         }
 
-        function handleImgError(imgElement, champName) {
+        function handleImgError(imgElement, champName, champKey) {
+            const key = champKey || champName;
+            const attempts = parseInt(imgElement.getAttribute('data-attempts') || '0', 10);
+
+            if (key === 'Locke' || champName === 'Locke') {
+                if (attempts === 0) {
+                    imgElement.setAttribute('data-attempts', '1');
+                    imgElement.src = 'locke.png';
+                    return;
+                }
+            }
+            if (key === 'Zaahen' || champName === 'Zaahen') {
+                if (attempts === 0) {
+                    imgElement.setAttribute('data-attempts', '1');
+                    imgElement.src = 'zaahen.png';
+                    return;
+                }
+            }
+
+            const fallbacks = [
+                `https://ddragon.leagueoflegends.com/cdn/15.4.1/img/champion/${key}.png`,
+                `https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/${key}.png`,
+                `https://cdn.communitydragon.org/latest/champion/${key.toLowerCase()}/square`
+            ];
+
+            if (attempts < fallbacks.length) {
+                imgElement.setAttribute('data-attempts', (attempts + 1).toString());
+                imgElement.src = fallbacks[attempts];
+                return;
+            }
+
             imgElement.onerror = null;
             const initials = champName.substring(0, 2).toUpperCase();
             const svg = `
@@ -589,6 +626,53 @@
 
         function closeModal() {
             document.getElementById('custom-modal').classList.add('hidden');
+        }
+
+        // =========================
+        // UNDO / REDO HISTORY SYSTEM
+        // =========================
+        function saveStateToHistory() {
+            undoStack.push(new Set(eliminatedChamps));
+            redoStack = []; // Se limpia el redo al realizar una nueva acción
+            updateUndoRedoButtons();
+        }
+
+        function updateUndoRedoButtons() {
+            const btnUndo = document.getElementById('btn-undo');
+            const btnRedo = document.getElementById('btn-redo');
+            if (btnUndo) btnUndo.disabled = (undoStack.length === 0);
+            if (btnRedo) btnRedo.disabled = (redoStack.length === 0);
+        }
+
+        function undoAction() {
+            if (undoStack.length === 0) return;
+            redoStack.push(new Set(eliminatedChamps));
+            const previousState = undoStack.pop();
+            eliminatedChamps = previousState;
+            applyEliminatedStateToGrid();
+            updateUndoRedoButtons();
+        }
+
+        function redoAction() {
+            if (redoStack.length === 0) return;
+            undoStack.push(new Set(eliminatedChamps));
+            const nextState = redoStack.pop();
+            eliminatedChamps = nextState;
+            applyEliminatedStateToGrid();
+            updateUndoRedoButtons();
+        }
+
+        function applyEliminatedStateToGrid() {
+            const cards = document.querySelectorAll('.champ-card');
+            cards.forEach(card => {
+                const champName = card.getAttribute('data-champ-name');
+                if (eliminatedChamps.has(champName)) {
+                    card.classList.add('eliminated');
+                } else {
+                    card.classList.remove('eliminated');
+                }
+            });
+            updateCounters();
         }
 
         // =========================
@@ -963,8 +1047,9 @@
             content.classList.add('flex');
 
             const imgEl = document.getElementById('my-champ-img');
-            imgEl.src = getChampImgUrl(champ.key);
-            imgEl.onerror = () => handleImgError(imgEl, champ.name);
+            imgEl.setAttribute('data-attempts', '0');
+            imgEl.src = champ.icon || getChampImgUrl(champ.key);
+            imgEl.onerror = () => handleImgError(imgEl, champ.name, champ.key);
 
             document.getElementById('my-champ-name').textContent = champ.name;
 
@@ -1013,10 +1098,10 @@
                 card.setAttribute('data-positions', (champ.positions || []).join(',').toLowerCase());
                 card.setAttribute('data-champ-name', champ.name);
 
-                const imgUrl = getChampImgUrl(champ.key);
+                const imgUrl = champ.icon || getChampImgUrl(champ.key);
 
                 card.innerHTML = `
-                    <img src="${imgUrl}" alt="${champ.name}" class="w-14 h-14 md:w-16 md:h-16 rounded-full border border-hex-border object-cover mb-1.5 pointer-events-none" onerror="handleImgError(this, '${champ.name}')">
+                    <img src="${imgUrl}" alt="${champ.name}" data-attempts="0" class="w-14 h-14 md:w-16 md:h-16 rounded-full border border-hex-border object-cover mb-1.5 pointer-events-none" onerror="handleImgError(this, '${champ.name}', '${champ.key}')">
                     <span class="font-cinzel text-xs font-bold text-hex-gold truncate w-full px-1 pointer-events-none">${champ.name}</span>
                 `;
 
@@ -1036,7 +1121,11 @@
             updateCounters();
         }
 
-        function toggleEliminate(champName, cardElement, forceEliminate = false) {
+        function toggleEliminate(champName, cardElement, forceEliminate = false, isBatch = false) {
+            if (!isBatch) {
+                saveStateToHistory();
+            }
+
             if (forceEliminate) {
                 eliminatedChamps.add(champName);
                 cardElement.classList.add('eliminated');
@@ -1069,6 +1158,7 @@
         }
 
         function strikeByRole(roleName) {
+            saveStateToHistory();
             CHAMPIONS.forEach(champ => {
                 if (champ.roles.includes(roleName)) {
                     eliminatedChamps.add(champ.name);
@@ -1082,6 +1172,7 @@
         }
 
         function strikeByGender(genderName) {
+            saveStateToHistory();
             CHAMPIONS.forEach(champ => {
                 if (champ.gender === genderName) {
                     eliminatedChamps.add(champ.name);
@@ -1095,6 +1186,7 @@
         }
 
         function strikeByPosition(positionName) {
+            saveStateToHistory();
             CHAMPIONS.forEach(champ => {
                 if ((champ.positions || []).includes(positionName)) {
                     eliminatedChamps.add(champ.name);
@@ -1108,6 +1200,7 @@
         }
 
         function strikeVisibles() {
+            saveStateToHistory();
             const cards = document.querySelectorAll('.champ-card:not(.hidden)');
             cards.forEach(card => {
                 const champKey = card.id.replace('champ-card-', '');
@@ -1161,6 +1254,9 @@
         }
 
         function resetGrid() {
+            if (eliminatedChamps.size > 0) {
+                saveStateToHistory();
+            }
             eliminatedChamps.clear();
             hideEliminated = false;
             
@@ -1187,17 +1283,20 @@
         async function loadChampionsData() {
             try {
                 const response = await fetch('./champions.json', { cache: 'no-store' });
+
                 if (!response.ok) {
-                    throw new Error(`HTTP ${response.status}`);
+                    throw new Error(`No se pudo cargar champions.json (HTTP ${response.status})`);
                 }
 
-                const data = await response.json();
-                if (!Array.isArray(data) || data.length < 2) {
+                const jsonData = await response.json();
+
+                if (!Array.isArray(jsonData) || jsonData.length < 2) {
                     throw new Error('champions.json no contiene una lista válida de campeones.');
                 }
 
-                CHAMPIONS = data.map(champ => ({
+                CHAMPIONS = jsonData.map(champ => ({
                     ...champ,
+                    icon: getChampImgUrl(champ.key),
                     roles: Array.isArray(champ.roles) ? champ.roles : [],
                     positions: Array.isArray(champ.positions) ? champ.positions : [],
                     gender: champ.gender || ''
@@ -1207,10 +1306,10 @@
                 renderChampionsGrid();
             } catch (error) {
                 console.error('Error cargando champions.json:', error);
+                championsLoaded = false;
                 showModal(
-                    'Error cargando campeones',
-                    'No se pudo cargar champions.json. Comprueba que el archivo esté en la misma carpeta que index.html y que sea un JSON válido.',
-                    'fa-triangle-exclamation text-red-400'
+                    'Error al cargar campeones',
+                    'No se ha podido cargar champions.json. Asegúrate de que el archivo está en la misma carpeta que el juego y de abrirlo desde un servidor web.'
                 );
             }
         }
@@ -1218,6 +1317,24 @@
         window.addEventListener('DOMContentLoaded', () => {
             setupDraggableChat();
             loadChampionsData();
+
+            // Atajos de teclado para Deshacer (Ctrl + Z) y Rehacer (Ctrl + Y / Ctrl + Shift + Z)
+            window.addEventListener('keydown', (e) => {
+                if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+                if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z') {
+                    if (e.shiftKey) {
+                        e.preventDefault();
+                        redoAction();
+                    } else {
+                        e.preventDefault();
+                        undoAction();
+                    }
+                } else if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'y') {
+                    e.preventDefault();
+                    redoAction();
+                }
+            });
         });
     </script>
 </body>
