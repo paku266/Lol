@@ -299,7 +299,7 @@
                 <div class="w-full min-h-[180px] bg-black/60 border border-hex-border rounded-lg p-4 flex flex-col items-center justify-center relative">
                     
                     <div id="my-champ-content" class="hidden flex-col items-center">
-                        <div id="my-champ-secret" class="filter blur-md transition-all duration-300 pointer-events-none select-none flex flex-col items-center">
+                        <div id="my-champ-secret" class="hidden transition-all duration-300 pointer-events-none select-none flex flex-col items-center">
                             <img id="my-champ-img" src="" alt="Tu Campeón" class="w-24 h-24 rounded-full border-2 border-hex-gold object-cover mb-3 shadow-lg">
                             <h2 id="my-champ-name" class="font-cinzel text-2xl font-extrabold text-hex-gold tracking-wider mb-1">---</h2>
                         </div>
@@ -1067,7 +1067,7 @@
         function showSecretView() {
             isSecretRevealed = true;
             const secretBox = document.getElementById('my-champ-secret');
-            secretBox.classList.remove('blur-md', 'pointer-events-none', 'select-none');
+            secretBox.classList.remove('hidden', 'pointer-events-none', 'select-none');
             
             document.getElementById('reveal-icon').className = "fa-solid fa-eye-slash";
             document.getElementById('reveal-text').textContent = "Ocultar Campeón";
@@ -1076,7 +1076,7 @@
         function hideSecretView() {
             isSecretRevealed = false;
             const secretBox = document.getElementById('my-champ-secret');
-            secretBox.classList.add('blur-md', 'pointer-events-none', 'select-none');
+            secretBox.classList.add('hidden', 'pointer-events-none', 'select-none');
             
             document.getElementById('reveal-icon').className = "fa-solid fa-eye";
             document.getElementById('reveal-text').textContent = "Mostrar Campeón";
