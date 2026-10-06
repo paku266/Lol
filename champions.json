@@ -6,7 +6,9 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Ahri",
@@ -15,7 +17,9 @@
       "Magos"
     ],
     "gender": "Femenino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Akali",
@@ -24,7 +28,9 @@
       "Asesinos"
     ],
     "gender": "Femenino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Akshan",
@@ -34,7 +40,9 @@
       "Asesinos"
     ],
     "gender": "Masculino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Alistar",
@@ -44,7 +52,9 @@
       "Soportes"
     ],
     "gender": "Masculino",
-    "positions": ["Support"]
+    "positions": [
+      "Support"
+    ]
   },
   {
     "name": "Ambessa",
@@ -53,7 +63,9 @@
       "Luchadores"
     ],
     "gender": "Femenino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Amumu",
@@ -62,7 +74,9 @@
       "Tanques"
     ],
     "gender": "Masculino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Anivia",
@@ -71,7 +85,9 @@
       "Magos"
     ],
     "gender": "Femenino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Annie",
@@ -80,7 +96,9 @@
       "Magos"
     ],
     "gender": "Femenino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Aphelios",
@@ -89,7 +107,9 @@
       "Tiradores"
     ],
     "gender": "Masculino",
-    "positions": ["Bot"]
+    "positions": [
+      "Bot"
+    ]
   },
   {
     "name": "Ashe",
@@ -98,7 +118,9 @@
       "Tiradores"
     ],
     "gender": "Femenino",
-    "positions": ["Bot"]
+    "positions": [
+      "Bot"
+    ]
   },
   {
     "name": "Aurelion Sol",
@@ -107,7 +129,9 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Aurora",
@@ -116,7 +140,9 @@
       "Magos"
     ],
     "gender": "Femenino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Azir",
@@ -125,7 +151,9 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Bard",
@@ -134,7 +162,9 @@
       "Soportes"
     ],
     "gender": "Masculino",
-    "positions": ["Support"]
+    "positions": [
+      "Support"
+    ]
   },
   {
     "name": "Bel'Veth",
@@ -143,7 +173,9 @@
       "Luchadores"
     ],
     "gender": "Femenino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Blitzcrank",
@@ -153,7 +185,9 @@
       "Soportes"
     ],
     "gender": "Masculino",
-    "positions": ["Support"]
+    "positions": [
+      "Support"
+    ]
   },
   {
     "name": "Brand",
@@ -162,7 +196,9 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": ["Support"]
+    "positions": [
+      "Support"
+    ]
   },
   {
     "name": "Braum",
@@ -172,7 +208,9 @@
       "Tanques"
     ],
     "gender": "Masculino",
-    "positions": ["Support"]
+    "positions": [
+      "Support"
+    ]
   },
   {
     "name": "Briar",
@@ -181,7 +219,9 @@
       "Luchadores"
     ],
     "gender": "Femenino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Caitlyn",
@@ -190,7 +230,9 @@
       "Tiradores"
     ],
     "gender": "Femenino",
-    "positions": ["Bot"]
+    "positions": [
+      "Bot"
+    ]
   },
   {
     "name": "Camille",
@@ -199,7 +241,9 @@
       "Luchadores"
     ],
     "gender": "Femenino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Cassiopeia",
@@ -208,7 +252,9 @@
       "Magos"
     ],
     "gender": "Femenino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Cho'Gath",
@@ -217,7 +263,9 @@
       "Tanques"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Corki",
@@ -226,7 +274,9 @@
       "Tiradores"
     ],
     "gender": "Masculino",
-    "positions": ["Bot"]
+    "positions": [
+      "Bot"
+    ]
   },
   {
     "name": "Darius",
@@ -235,7 +285,9 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Diana",
@@ -244,7 +296,10 @@
       "Luchadores"
     ],
     "gender": "Femenino",
-    "positions": ["Jungle", "Mid"]
+    "positions": [
+      "Jungle",
+      "Mid"
+    ]
   },
   {
     "name": "Dr. Mundo",
@@ -253,7 +308,9 @@
       "Tanques"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Draven",
@@ -262,7 +319,9 @@
       "Tiradores"
     ],
     "gender": "Masculino",
-    "positions": ["Bot"]
+    "positions": [
+      "Bot"
+    ]
   },
   {
     "name": "Ekko",
@@ -271,7 +330,10 @@
       "Asesinos"
     ],
     "gender": "Masculino",
-    "positions": ["Mid", "Jungle"]
+    "positions": [
+      "Mid",
+      "Jungle"
+    ]
   },
   {
     "name": "Elise",
@@ -280,7 +342,9 @@
       "Asesinos"
     ],
     "gender": "Femenino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Evelynn",
@@ -289,7 +353,9 @@
       "Asesinos"
     ],
     "gender": "Femenino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Ezreal",
@@ -298,7 +364,9 @@
       "Tiradores"
     ],
     "gender": "Masculino",
-    "positions": ["Bot"]
+    "positions": [
+      "Bot"
+    ]
   },
   {
     "name": "Fiddlesticks",
@@ -307,7 +375,9 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Fiora",
@@ -316,7 +386,9 @@
       "Luchadores"
     ],
     "gender": "Femenino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Fizz",
@@ -325,7 +397,9 @@
       "Asesinos"
     ],
     "gender": "Masculino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Galio",
@@ -334,7 +408,9 @@
       "Tanques"
     ],
     "gender": "Masculino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Gangplank",
@@ -343,7 +419,9 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Garen",
@@ -352,7 +430,9 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Gnar",
@@ -362,7 +442,9 @@
       "Tiradores"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Gragas",
@@ -372,7 +454,9 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Graves",
@@ -382,7 +466,9 @@
       "Asesino"
     ],
     "gender": "Masculino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Gwen",
@@ -391,7 +477,9 @@
       "Luchadores"
     ],
     "gender": "Femenino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Hecarim",
@@ -400,7 +488,9 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Heimerdinger",
@@ -409,7 +499,9 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Hwei",
@@ -418,7 +510,9 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Illaoi",
@@ -427,7 +521,9 @@
       "Luchadores"
     ],
     "gender": "Femenino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Irelia",
@@ -436,7 +532,9 @@
       "Luchadores"
     ],
     "gender": "Femenino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Ivern",
@@ -445,7 +543,9 @@
       "Soportes"
     ],
     "gender": "Masculino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Janna",
@@ -454,7 +554,9 @@
       "Soportes"
     ],
     "gender": "Femenino",
-    "positions": ["Support"]
+    "positions": [
+      "Support"
+    ]
   },
   {
     "name": "Jarvan IV",
@@ -464,7 +566,9 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Jax",
@@ -473,7 +577,9 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Jayce",
@@ -483,7 +589,9 @@
       "Tiradores"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Jhin",
@@ -492,7 +600,9 @@
       "Tiradores"
     ],
     "gender": "Masculino",
-    "positions": ["Bot"]
+    "positions": [
+      "Bot"
+    ]
   },
   {
     "name": "Jinx",
@@ -501,7 +611,9 @@
       "Tiradores"
     ],
     "gender": "Femenino",
-    "positions": ["Bot"]
+    "positions": [
+      "Bot"
+    ]
   },
   {
     "name": "K'Sante",
@@ -510,7 +622,9 @@
       "Tanques"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Kai'Sa",
@@ -519,7 +633,9 @@
       "Tiradores"
     ],
     "gender": "Femenino",
-    "positions": ["Bot"]
+    "positions": [
+      "Bot"
+    ]
   },
   {
     "name": "Kalista",
@@ -528,7 +644,9 @@
       "Tiradores"
     ],
     "gender": "Femenino",
-    "positions": ["Bot"]
+    "positions": [
+      "Bot"
+    ]
   },
   {
     "name": "Karma",
@@ -537,7 +655,9 @@
       "Soportes"
     ],
     "gender": "Femenino",
-    "positions": ["Support"]
+    "positions": [
+      "Support"
+    ]
   },
   {
     "name": "Karthus",
@@ -546,7 +666,9 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Kassadin",
@@ -555,7 +677,9 @@
       "Asesinos"
     ],
     "gender": "Masculino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Katarina",
@@ -564,7 +688,9 @@
       "Asesinos"
     ],
     "gender": "Femenino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Kayle",
@@ -574,7 +700,9 @@
       "Magos"
     ],
     "gender": "Femenino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Kayn",
@@ -584,7 +712,9 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Kennen",
@@ -593,7 +723,9 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Kha'Zix",
@@ -602,7 +734,9 @@
       "Asesinos"
     ],
     "gender": "Masculino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Kindred",
@@ -611,7 +745,9 @@
       "Tiradores"
     ],
     "gender": "Femenino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Kled",
@@ -620,7 +756,9 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Kog'Maw",
@@ -630,7 +768,9 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": ["Bot"]
+    "positions": [
+      "Bot"
+    ]
   },
   {
     "name": "LeBlanc",
@@ -640,7 +780,9 @@
       "Magos"
     ],
     "gender": "Femenino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Lee Sin",
@@ -649,7 +791,9 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Leona",
@@ -659,7 +803,9 @@
       "Soportes"
     ],
     "gender": "Femenino",
-    "positions": ["Support"]
+    "positions": [
+      "Support"
+    ]
   },
   {
     "name": "Lillia",
@@ -669,7 +815,9 @@
       "Magos"
     ],
     "gender": "Femenino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Lissandra",
@@ -678,7 +826,9 @@
       "Magos"
     ],
     "gender": "Femenino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Locke",
@@ -687,7 +837,9 @@
       "Asesinos"
     ],
     "gender": "Masculino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Lucian",
@@ -696,7 +848,9 @@
       "Tiradores"
     ],
     "gender": "Masculino",
-    "positions": ["Bot"]
+    "positions": [
+      "Bot"
+    ]
   },
   {
     "name": "Lulu",
@@ -705,7 +859,9 @@
       "Soportes"
     ],
     "gender": "Femenino",
-    "positions": ["Support"]
+    "positions": [
+      "Support"
+    ]
   },
   {
     "name": "Lux",
@@ -714,7 +870,10 @@
       "Magos"
     ],
     "gender": "Femenino",
-    "positions": ["Mid", "Support"]
+    "positions": [
+      "Mid",
+      "Support"
+    ]
   },
   {
     "name": "Malphite",
@@ -723,7 +882,9 @@
       "Tanques"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Malzahar",
@@ -732,7 +893,9 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Maokai",
@@ -741,7 +904,10 @@
       "Tanques"
     ],
     "gender": "Masculino",
-    "positions": ["Jungle", "Support"]
+    "positions": [
+      "Jungle",
+      "Support"
+    ]
   },
   {
     "name": "Master Yi",
@@ -751,7 +917,9 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Mel",
@@ -760,7 +928,9 @@
       "Magos"
     ],
     "gender": "Femenino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Milio",
@@ -769,7 +939,9 @@
       "Soportes"
     ],
     "gender": "Masculino",
-    "positions": ["Support"]
+    "positions": [
+      "Support"
+    ]
   },
   {
     "name": "Miss Fortune",
@@ -778,7 +950,9 @@
       "Tiradores"
     ],
     "gender": "Femenino",
-    "positions": ["Bot"]
+    "positions": [
+      "Bot"
+    ]
   },
   {
     "name": "Mordekaiser",
@@ -787,7 +961,9 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Morgana",
@@ -797,7 +973,9 @@
       "Soportes"
     ],
     "gender": "Femenino",
-    "positions": ["Support"]
+    "positions": [
+      "Support"
+    ]
   },
   {
     "name": "Naafiri",
@@ -806,7 +984,10 @@
       "Asesinos"
     ],
     "gender": "Femenino",
-    "positions": ["Mid", "Jungle"]
+    "positions": [
+      "Mid",
+      "Jungle"
+    ]
   },
   {
     "name": "Nami",
@@ -815,7 +996,9 @@
       "Soportes"
     ],
     "gender": "Femenino",
-    "positions": ["Support"]
+    "positions": [
+      "Support"
+    ]
   },
   {
     "name": "Nasus",
@@ -825,7 +1008,9 @@
       "Tanques"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Nautilus",
@@ -835,7 +1020,9 @@
       "Soportes"
     ],
     "gender": "Masculino",
-    "positions": ["Support"]
+    "positions": [
+      "Support"
+    ]
   },
   {
     "name": "Neeko",
@@ -844,7 +1031,9 @@
       "Magos"
     ],
     "gender": "Femenino",
-    "positions": ["Support"]
+    "positions": [
+      "Support"
+    ]
   },
   {
     "name": "Nidalee",
@@ -854,7 +1043,9 @@
       "Magos"
     ],
     "gender": "Femenino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Nilah",
@@ -863,7 +1054,9 @@
       "Luchadores"
     ],
     "gender": "Femenino",
-    "positions": ["Bot"]
+    "positions": [
+      "Bot"
+    ]
   },
   {
     "name": "Nocturne",
@@ -873,7 +1066,9 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Nunu & Willump",
@@ -883,7 +1078,9 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Olaf",
@@ -892,7 +1089,9 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Orianna",
@@ -901,7 +1100,9 @@
       "Magos"
     ],
     "gender": "Femenino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Ornn",
@@ -910,7 +1111,9 @@
       "Tanques"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Pantheon",
@@ -919,7 +1122,11 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": ["Top", "Support", "Jungle"]
+    "positions": [
+      "Top",
+      "Support",
+      "Jungle"
+    ]
   },
   {
     "name": "Poppy",
@@ -929,7 +1136,11 @@
       "Luchadores"
     ],
     "gender": "Femenino",
-    "positions": ["Top", "Jungle", "Support"]
+    "positions": [
+      "Top",
+      "Jungle",
+      "Support"
+    ]
   },
   {
     "name": "Pyke",
@@ -938,7 +1149,9 @@
       "Asesinos"
     ],
     "gender": "Masculino",
-    "positions": ["Support"]
+    "positions": [
+      "Support"
+    ]
   },
   {
     "name": "Qiyana",
@@ -947,7 +1160,10 @@
       "Asesinos"
     ],
     "gender": "Femenino",
-    "positions": ["Jungle", "Mid"]
+    "positions": [
+      "Jungle",
+      "Mid"
+    ]
   },
   {
     "name": "Quinn",
@@ -957,7 +1173,9 @@
       "Asesinos"
     ],
     "gender": "Femenino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Rakan",
@@ -966,7 +1184,9 @@
       "Soportes"
     ],
     "gender": "Masculino",
-    "positions": ["Support"]
+    "positions": [
+      "Support"
+    ]
   },
   {
     "name": "Rammus",
@@ -975,7 +1195,9 @@
       "Tanques"
     ],
     "gender": "Masculino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Rek'Sai",
@@ -984,7 +1206,9 @@
       "Luchadores"
     ],
     "gender": "Femenino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Rell",
@@ -994,7 +1218,9 @@
       "Soportes"
     ],
     "gender": "Femenino",
-    "positions": ["Support"]
+    "positions": [
+      "Support"
+    ]
   },
   {
     "name": "Renata Glasc",
@@ -1003,7 +1229,9 @@
       "Soportes"
     ],
     "gender": "Femenino",
-    "positions": ["Support"]
+    "positions": [
+      "Support"
+    ]
   },
   {
     "name": "Renekton",
@@ -1012,7 +1240,9 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Rengar",
@@ -1021,7 +1251,9 @@
       "Asesinos"
     ],
     "gender": "Masculino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Riven",
@@ -1030,7 +1262,9 @@
       "Luchadores"
     ],
     "gender": "Femenino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Rumble",
@@ -1040,7 +1274,9 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Ryze",
@@ -1049,7 +1285,9 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Samira",
@@ -1058,7 +1296,9 @@
       "Tiradores"
     ],
     "gender": "Femenino",
-    "positions": ["Bot"]
+    "positions": [
+      "Bot"
+    ]
   },
   {
     "name": "Sejuani",
@@ -1067,7 +1307,9 @@
       "Tanques"
     ],
     "gender": "Femenino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Senna",
@@ -1077,7 +1319,10 @@
       "Soportes"
     ],
     "gender": "Femenino",
-    "positions": ["Support", "Bot"]
+    "positions": [
+      "Support",
+      "Bot"
+    ]
   },
   {
     "name": "Seraphine",
@@ -1086,7 +1331,9 @@
       "Soportes"
     ],
     "gender": "Femenino",
-    "positions": ["Support"]
+    "positions": [
+      "Support"
+    ]
   },
   {
     "name": "Sett",
@@ -1096,7 +1343,9 @@
       "Tanques"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Shaco",
@@ -1105,7 +1354,9 @@
       "Asesinos"
     ],
     "gender": "Masculino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Shen",
@@ -1115,7 +1366,9 @@
       "Soportes"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Shyvana",
@@ -1124,7 +1377,9 @@
       "Luchadores"
     ],
     "gender": "Femenino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Singed",
@@ -1134,7 +1389,9 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Sion",
@@ -1143,7 +1400,9 @@
       "Tanques"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Sivir",
@@ -1152,7 +1411,9 @@
       "Tiradores"
     ],
     "gender": "Femenino",
-    "positions": ["Bot"]
+    "positions": [
+      "Bot"
+    ]
   },
   {
     "name": "Skarner",
@@ -1161,7 +1422,9 @@
       "Tanques"
     ],
     "gender": "Masculino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Smolder",
@@ -1170,7 +1433,9 @@
       "Tiradores"
     ],
     "gender": "Masculino",
-    "positions": ["Bot"]
+    "positions": [
+      "Bot"
+    ]
   },
   {
     "name": "Sona",
@@ -1179,7 +1444,9 @@
       "Soportes"
     ],
     "gender": "Femenino",
-    "positions": ["Support"]
+    "positions": [
+      "Support"
+    ]
   },
   {
     "name": "Soraka",
@@ -1188,7 +1455,9 @@
       "Soportes"
     ],
     "gender": "Femenino",
-    "positions": ["Support"]
+    "positions": [
+      "Support"
+    ]
   },
   {
     "name": "Swain",
@@ -1198,7 +1467,9 @@
       "Tanques"
     ],
     "gender": "Masculino",
-    "positions": ["Support"]
+    "positions": [
+      "Support"
+    ]
   },
   {
     "name": "Sylas",
@@ -1208,7 +1479,10 @@
       "Asesinos"
     ],
     "gender": "Masculino",
-    "positions": ["Mid", "Jungle"]
+    "positions": [
+      "Mid",
+      "Jungle"
+    ]
   },
   {
     "name": "Syndra",
@@ -1217,7 +1491,9 @@
       "Magos"
     ],
     "gender": "Femenino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Tahm Kench",
@@ -1226,7 +1502,9 @@
       "Tanques"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Taliyah",
@@ -1235,7 +1513,10 @@
       "Magos"
     ],
     "gender": "Femenino",
-    "positions": ["Jungle", "Mid"]
+    "positions": [
+      "Jungle",
+      "Mid"
+    ]
   },
   {
     "name": "Talon",
@@ -1244,7 +1525,9 @@
       "Asesinos"
     ],
     "gender": "Masculino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Taric",
@@ -1254,7 +1537,9 @@
       "Tanques"
     ],
     "gender": "Masculino",
-    "positions": ["Support"]
+    "positions": [
+      "Support"
+    ]
   },
   {
     "name": "Teemo",
@@ -1264,7 +1549,9 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Thresh",
@@ -1274,7 +1561,9 @@
       "Tanques"
     ],
     "gender": "Masculino",
-    "positions": ["Support"]
+    "positions": [
+      "Support"
+    ]
   },
   {
     "name": "Tristana",
@@ -1283,7 +1572,9 @@
       "Tiradores"
     ],
     "gender": "Femenino",
-    "positions": ["Bot"]
+    "positions": [
+      "Bot"
+    ]
   },
   {
     "name": "Trundle",
@@ -1292,7 +1583,10 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": ["Top", "Jungle"]
+    "positions": [
+      "Top",
+      "Jungle"
+    ]
   },
   {
     "name": "Tryndamere",
@@ -1301,7 +1595,9 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Twisted Fate",
@@ -1310,7 +1606,9 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Twitch",
@@ -1319,7 +1617,9 @@
       "Tiradores"
     ],
     "gender": "Masculino",
-    "positions": ["Bot"]
+    "positions": [
+      "Bot"
+    ]
   },
   {
     "name": "Udyr",
@@ -1328,7 +1628,9 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Urgot",
@@ -1337,7 +1639,9 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Varus",
@@ -1346,7 +1650,9 @@
       "Tiradores"
     ],
     "gender": "Masculino",
-    "positions": ["Bot"]
+    "positions": [
+      "Bot"
+    ]
   },
   {
     "name": "Vayne",
@@ -1355,7 +1661,9 @@
       "Tiradores"
     ],
     "gender": "Femenino",
-    "positions": ["Bot"]
+    "positions": [
+      "Bot"
+    ]
   },
   {
     "name": "Veigar",
@@ -1364,7 +1672,9 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Vel'Koz",
@@ -1373,7 +1683,10 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": ["Mid", "Support"]
+    "positions": [
+      "Mid",
+      "Support"
+    ]
   },
   {
     "name": "Vex",
@@ -1382,7 +1695,9 @@
       "Magos"
     ],
     "gender": "Femenino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Vi",
@@ -1391,7 +1706,9 @@
       "Luchadores"
     ],
     "gender": "Femenino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Viego",
@@ -1401,7 +1718,9 @@
       "Asesinos"
     ],
     "gender": "Masculino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Viktor",
@@ -1410,7 +1729,9 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Vladimir",
@@ -1419,7 +1740,10 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": ["Top", "Mid"]
+    "positions": [
+      "Top",
+      "Mid"
+    ]
   },
   {
     "name": "Volibear",
@@ -1428,7 +1752,10 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": ["Top", "Jungle"]
+    "positions": [
+      "Top",
+      "Jungle"
+    ]
   },
   {
     "name": "Warwick",
@@ -1437,7 +1764,10 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": ["Top", "Jungle"]
+    "positions": [
+      "Top",
+      "Jungle"
+    ]
   },
   {
     "name": "Wukong",
@@ -1446,7 +1776,9 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Xayah",
@@ -1455,7 +1787,9 @@
       "Tiradores"
     ],
     "gender": "Femenino",
-    "positions": ["Bot"]
+    "positions": [
+      "Bot"
+    ]
   },
   {
     "name": "Xerath",
@@ -1464,7 +1798,10 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": ["Mid", "Support"]
+    "positions": [
+      "Mid",
+      "Support"
+    ]
   },
   {
     "name": "Xin Zhao",
@@ -1473,7 +1810,9 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Yasuo",
@@ -1483,7 +1822,10 @@
       "Asesinos"
     ],
     "gender": "Masculino",
-    "positions": ["Top", "Mid"]
+    "positions": [
+      "Top",
+      "Mid"
+    ]
   },
   {
     "name": "Yone",
@@ -1493,7 +1835,10 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": ["Top", "Mid"]
+    "positions": [
+      "Top",
+      "Mid"
+    ]
   },
   {
     "name": "Yorick",
@@ -1502,7 +1847,9 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions": ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Yuumi",
@@ -1511,7 +1858,9 @@
       "Soportes"
     ],
     "gender": "Femenino",
-    "positions": ["Support"]
+    "positions": [
+      "Support"
+    ]
   },
   {
     "name": "Yunara",
@@ -1520,7 +1869,9 @@
       "Tiradores"
     ],
     "gender": "Femenino",
-    "positions": ["Bot"]
+    "positions": [
+      "Bot"
+    ]
   },
   {
     "name": "Zaahen",
@@ -1529,7 +1880,9 @@
       "Luchadores"
     ],
     "gender": "Masculino",
-    "positions" : ["Top"]
+    "positions": [
+      "Top"
+    ]
   },
   {
     "name": "Zac",
@@ -1538,7 +1891,9 @@
       "Tanques"
     ],
     "gender": "Masculino",
-    "positions": ["Jungle"]
+    "positions": [
+      "Jungle"
+    ]
   },
   {
     "name": "Zed",
@@ -1547,7 +1902,9 @@
       "Asesinos"
     ],
     "gender": "Masculino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Zeri",
@@ -1556,7 +1913,9 @@
       "Tiradores"
     ],
     "gender": "Femenino",
-    "positions": ["Bot"]
+    "positions": [
+      "Bot"
+    ]
   },
   {
     "name": "Ziggs",
@@ -1565,7 +1924,10 @@
       "Magos"
     ],
     "gender": "Masculino",
-    "positions": ["Mid", "Bot"]
+    "positions": [
+      "Mid",
+      "Bot"
+    ]
   },
   {
     "name": "Zilean",
@@ -1574,7 +1936,9 @@
       "Soportes"
     ],
     "gender": "Masculino",
-    "positions": ["Support"]
+    "positions": [
+      "Support"
+    ]
   },
   {
     "name": "Zoe",
@@ -1583,7 +1947,9 @@
       "Magos"
     ],
     "gender": "Femenino",
-    "positions": ["Mid"]
+    "positions": [
+      "Mid"
+    ]
   },
   {
     "name": "Zyra",
@@ -1592,7 +1958,9 @@
       "Magos"
     ],
     "gender": "Femenino",
-    "positions": ["Support", "Jungle"]
+    "positions": [
+      "Support",
+      "Jungle"
+    ]
   }
 ]
-
